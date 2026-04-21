@@ -1,0 +1,163 @@
+<manifest alg="2" build="2018.1.1.386" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="cem.fr" resolutions="1x" timestamp="1770371150503">
+  <folder name="css">
+    <file name="site_global.css" crc="385285191"/>
+    <file name="master_a-gabarit.css" crc="3848185453" ref="index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="index.css" crc="4066672061" ref="index"/>
+    <file name="les-comites-sociaux-et-economiques-cse.css" crc="356323746" ref="les-comites-sociaux-et-economiques-cse"/>
+  </folder>
+  <folder name="fonts">
+    <file name="sf-pro-display-medium-webfont.woff" crc="4039368995"/>
+    <file name="sf-pro-display-medium-webfont.eot" crc="3758326568"/>
+    <file name="sf-pro-display-medium-webfont.svg" crc="21313989"/>
+    <file name="sf-pro-display-bold-webfont.woff" crc="92900330"/>
+    <file name="sf-pro-display-bold-webfont.eot" crc="3847729850"/>
+    <file name="sf-pro-display-bold-webfont.svg" crc="4021242965"/>
+    <file name="sf-pro-display-semibold-webfont.woff" crc="3971633789"/>
+    <file name="sf-pro-display-semibold-webfont.eot" crc="4145266979"/>
+    <file name="sf-pro-display-semibold-webfont.svg" crc="62610422"/>
+    <file name="sf-pro-display-light-webfont.woff" crc="400594250"/>
+    <file name="sf-pro-display-light-webfont.eot" crc="3877575897"/>
+    <file name="sf-pro-display-light-webfont.svg" crc="425251153"/>
+    <file name="sf-pro-display-regular-webfont.woff" crc="237760250"/>
+    <file name="sf-pro-display-regular-webfont.eot" crc="125583448"/>
+    <file name="sf-pro-display-regular-webfont.svg" crc="470116927"/>
+    <file name="outfit-regular-webfont.woff" crc="3944101014"/>
+    <file name="outfit-regular-webfont.eot" crc="175980864"/>
+    <file name="outfit-regular-webfont.svg" crc="4278112825"/>
+  </folder>
+  <folder name="assets">
+    <file name="siteweb-cem.mp4" crc="3891980501" seo="true" mt="1764510346000"/>
+    <file name="siteweb-cem.webm" crc="81882129" seo="true" mt="1764510493000"/>
+    <file name="siteweb-cem-mobile.webm" crc="159189714" seo="true" mt="1765962435000"/>
+    <file name="siteweb-cem-mobile.mp4" crc="4179985104" seo="true" mt="1765962333000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="museutils.js" crc="3939489907" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="whatinput.js" crc="86476730" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="museconfig.js" crc="128606099" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="jquery.watch.js" crc="522499760" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="85124417" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="webpro.js" crc="3856315280" ref="phone>index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="musewpdisclosure.js" crc="4294234138" ref="phone>index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="require.js" crc="4177726516" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse"/>
+    <file name="jquery.scrolleffects.js" crc="312044820" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="instagram-blanc-ledix9.svg" crc="318083388" ref="phone>index:index"/>
+    <file name="instagram-blanc-ledix9_poster_u156.png" crc="50465998" ref="phone>index:index"/>
+    <file name="linkedin-blanc-cem.svg" crc="122873258" ref="phone>index:index"/>
+    <file name="linkedin-blanc-cem_poster_u221.png" crc="3937635648" ref="phone>index:index"/>
+    <file name="facebook-blanc-ledix9.svg" crc="521601987" ref="phone>index:index"/>
+    <file name="facebook-blanc-ledix9_poster_u150.png" crc="523809070" ref="phone>index:index"/>
+    <file name="logo-cem.svg" crc="3868101819" ref="phone>index:index"/>
+    <file name="logo-cem_poster_u838.png" crc="3862897824" ref="phone>index:index"/>
+    <file name="photo-paulmarsault2-cem.png" crc="4110262174" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="icon3-cem.svg" crc="192805170" seo="true" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="icon3-cem_poster_.png" crc="345234229" ref="phone>index"/>
+    <file name="icon4-cem.svg" crc="99417018" seo="true" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="icon4-cem_poster_.png" crc="41987451" ref="phone>index"/>
+    <file name="icon2-cem.svg" crc="4163793678" seo="true" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="icon2-cem_poster_.png" crc="399722800" ref="phone>index"/>
+    <file name="icon1-cem.svg" crc="3865878743" seo="true" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="icon1-cem_poster_.png" crc="324854204" ref="phone>index"/>
+    <file name="photo-agde-cem-u2972-fr.jpg" crc="4104414035" ref="phone>index"/>
+    <file name="paris-cem.jpg" crc="534404797" ref="phone>index:index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="logo-blanc-cem.svg" crc="4073900992" seo="true" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+    </file>
+    <file name="logo-blanc-cem_poster_.png" crc="4250347476" ref="phone>index"/>
+    <file name="logoblanc-paper34.svg" crc="3970129298" seo="true" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse:index:les-comites-sociaux-et-economiques-cse">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+    </file>
+    <file name="logoblanc-paper34_poster_.png" crc="50960925" ref="phone>index"/>
+    <file name="local-cem.jpg" crc="244285851" ref="phone>les-comites-sociaux-et-economiques-cse">
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+    </file>
+    <file name="a-gabarit-favicon.ico" crc="4173212919" ref="index"/>
+    <file name="cadremap-cem-crop-u1219.png" crc="289413236" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u2415.png" crc="467170936" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u1316.png" crc="4184814164" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u1272.png" crc="3851570624" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u1265.png" crc="107584209" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u2422.png" crc="4069751925" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cadremap-cem-crop-u1464.png" crc="475524105" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="photo-agde-cem.jpg" crc="462755872" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="equipe-cem.jpg" crc="347215296" ref="les-comites-sociaux-et-economiques-cse">
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+    </file>
+    <file name="fleche-bleu-cem.svg" crc="4077429307" seo="true" ref="les-comites-sociaux-et-economiques-cse">
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+      <caption webpage="les-comites-sociaux-et-economiques-cse" alt=""/>
+    </file>
+    <file name="fleche-bleu-cem_poster_.png" crc="4057843619" ref="les-comites-sociaux-et-economiques-cse"/>
+  </folder>
+  <folder name="phone">
+    <folder name="css">
+      <file name="master_a-gabarit.css" crc="4146717228" ref="phone>index:phone>les-comites-sociaux-et-economiques-cse"/>
+      <file name="index.css" crc="291983086" ref="phone>index"/>
+      <file name="les-comites-sociaux-et-economiques-cse.css" crc="3799818040" ref="phone>les-comites-sociaux-et-economiques-cse"/>
+    </folder>
+    <file name="index.html" crc="4212212731" seo="true" mt="1770371135796" redirect="true"/>
+    <file name="les-comites-sociaux-et-economiques-cse.html" crc="356608853" seo="true" mt="1765966429547" redirect="true"/>
+  </folder>
+  <file name="index.html" crc="61092562" seo="true" mt="1770371100485" redirect="true"/>
+  <file name="les-comites-sociaux-et-economiques-cse.html" crc="174995602" seo="true" mt="1765965549166" redirect="true"/>
+</manifest>
