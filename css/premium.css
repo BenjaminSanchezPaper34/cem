@@ -1,0 +1,34 @@
+/* Premium ease — page load, scroll, transitions */
+
+html { scroll-behavior: smooth; }
+
+/* Fade-in global au chargement */
+body {
+  opacity: 0;
+  transition: opacity .7s cubic-bezier(.22,.61,.36,1);
+}
+body.cem-loaded { opacity: 1; }
+
+/* Fade-out avant navigation (transition de page) */
+body.cem-leaving { opacity: 0; transition: opacity .35s ease; }
+
+/* Courbe d'ease globale sur les éléments interactifs Muse */
+a, button, .Bouton, .rounded-corners {
+  transition: transform .35s cubic-bezier(.22,.61,.36,1),
+              box-shadow .35s cubic-bezier(.22,.61,.36,1),
+              opacity .25s ease,
+              background-color .3s ease,
+              color .3s ease !important;
+}
+
+/* Micro-lift au hover sur boutons / cards */
+.Bouton:hover, .shadow.rounded-corners:hover {
+  transform: translateY(-2px);
+}
+
+/* Respect accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body, body.cem-loaded, body.cem-leaving { opacity: 1 !important; transition: none !important; }
+  a, button, .Bouton, .rounded-corners { transition: none !important; }
+}
