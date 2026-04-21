@@ -1,34 +1,166 @@
-/* Premium ease — page load, scroll, transitions */
+/* Premium ease — style Fuzen : out-quart, reveals, transitions */
+
+:root {
+  --cem-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 html { scroll-behavior: smooth; }
 
-/* Fade-in global au chargement */
-body {
-  opacity: 0;
-  transition: opacity .7s cubic-bezier(.22,.61,.36,1);
-}
+/* Body fade-in au chargement */
+body { opacity: 0; transition: opacity .6s var(--cem-ease); }
 body.cem-loaded { opacity: 1; }
 
-/* Fade-out avant navigation (transition de page) */
-body.cem-leaving { opacity: 0; transition: opacity .35s ease; }
+/* View Transitions API — fade doux entre pages */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .45s;
+  animation-timing-function: var(--cem-ease);
+}
+@keyframes vt-fade-out { to   { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } }
+::view-transition-old(root) { animation-name: vt-fade-out; }
+::view-transition-new(root) { animation-name: vt-fade-in; }
 
-/* Courbe d'ease globale sur les éléments interactifs Muse */
-a, button, .Bouton, .rounded-corners {
-  transition: transform .35s cubic-bezier(.22,.61,.36,1),
-              box-shadow .35s cubic-bezier(.22,.61,.36,1),
+/* Fallback pour navigateurs sans View Transitions */
+body.cem-leaving { opacity: 0; transition: opacity .3s ease; }
+
+/* Transitions globales */
+a, button, .Bouton, .rounded-corners, .shadow, img.svg {
+  transition: transform .25s var(--cem-ease),
+              box-shadow .3s var(--cem-ease),
               opacity .25s ease,
-              background-color .3s ease,
-              color .3s ease !important;
+              background-color .25s ease,
+              color .25s ease,
+              filter .25s ease !important;
 }
 
-/* Micro-lift au hover sur boutons / cards */
-.Bouton:hover, .shadow.rounded-corners:hover {
+/* Hover boutons */
+.Bouton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.shadow.rounded-corners:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11,29,58,.15) !important;
+}
+
+/* Icônes sociales */
+a[href*="instagram"],
+a[href*="linkedin"],
+a[href*="facebook"] {
+  opacity: .9;
+  transition: opacity .2s, transform .25s var(--cem-ease) !important;
+}
+a[href*="instagram"]:hover,
+a[href*="linkedin"]:hover,
+a[href*="facebook"]:hover {
+  opacity: 1;
   transform: translateY(-2px);
 }
 
-/* Respect accessibilité */
+/* Logos header/footer */
+#u105:hover, #u1037:hover { transform: scale(1.03); }
+
+/* ======= Reveal-on-scroll ======= */
+.sr {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease);
+  will-change: opacity, transform;
+}
+.sr.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger — enfants directs */
+.cem-stagger > .sr.in:nth-child(1) { transition-delay: .05s; }
+.cem-stagger > .sr.in:nth-child(2) { transition-delay: .12s; }
+.cem-stagger > .sr.in:nth-child(3) { transition-delay: .19s; }
+.cem-stagger > .sr.in:nth-child(4) { transition-delay: .26s; }
+.cem-stagger > .sr.in:nth-child(5) { transition-delay: .33s; }
+
+/* ======= Hero : rise-in séquencé au chargement ======= */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body.cem-loaded #u294-13,
+body.cem-loaded #u336-4,
+body.cem-loaded #u257-4,
+body.cem-loaded #u254-4,
+body.cem-loaded #u241-4,
+body.cem-loaded #u245,
+body.cem-loaded #u246,
+body.cem-loaded #u247,
+body.cem-loaded #u105 {
+  animation: rise-in .8s var(--cem-ease) both;
+}
+body.cem-loaded #u105    { animation-delay: .05s; }
+body.cem-loaded #u336-4  { animation-delay: .12s; }
+body.cem-loaded #u257-4  { animation-delay: .20s; }
+body.cem-loaded #u254-4  { animation-delay: .27s; }
+body.cem-loaded #u241-4  { animation-delay: .34s; }
+body.cem-loaded #u245    { animation-delay: .41s; }
+body.cem-loaded #u246    { animation-delay: .46s; }
+body.cem-loaded #u247    { animation-delay: .51s; }
+body.cem-loaded #u294-13 { animation-delay: .25s; }
+
+/* Chatbot FAB — float + ping discret */
+.cem-chat-fab { animation: cem-fab-float 3.8s ease-in-out infinite; }
+.cem-chat-fab::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(11,29,58,.32);
+  animation: cem-fab-ping 2.8s cubic-bezier(0,0,.2,1) infinite;
+  pointer-events: none;
+}
+@keyframes cem-fab-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+@keyframes cem-fab-ping {
+  0%        { transform: scale(1);   opacity: .55; }
+  80%, 100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* Images : zoom subtil au hover du parent */
+.clip_frame img {
+  transition: transform .7s var(--cem-ease) !important;
+}
+.rounded-corners:hover .clip_frame img,
+.shadow:hover .clip_frame img,
+.shadow.rounded-corners:hover img {
+  transform: scale(1.04);
+}
+
+/* Liens textuels : underline animé */
+a[href^="mailto"] {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size .5s var(--cem-ease);
+}
+a[href^="mailto"]:hover { background-size: 100% 1px; }
+
+/* Accordéon CSE : flèche qui pivote */
+.AccordionPanelTab img.svg {
+  transition: transform .4s var(--cem-ease) !important;
+}
+.AccordionPanelOpen .AccordionPanelTab img.svg {
+  transform: rotate(90deg);
+}
+
+/* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body, body.cem-loaded, body.cem-leaving { opacity: 1 !important; transition: none !important; }
-  a, button, .Bouton, .rounded-corners { transition: none !important; }
+  *, body {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
