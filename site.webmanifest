@@ -1,0 +1,14 @@
+{
+  "name": "CEM — Conseil Expertise Management",
+  "short_name": "CEM",
+  "description": "Cabinet d'expertise comptable à Agde et Paris. Audit, paie & RH, stratégie fiscale, accompagnement juridique.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1d3a",
+  "lang": "fr-FR",
+  "icons": [
+    { "src": "/images/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/images/a-gabarit-favicon.ico", "sizes": "48x48", "type": "image/x-icon" }
+  ]
+}

@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://www.cem-expertcomptable.fr/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" media="only screen and (max-width: 370px)" href="https://www.cem-expertcomptable.fr/phone/index.html"/>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/logo-blanc-cem.svg</image:loc></image:image>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/icon1-cem.svg</image:loc></image:image>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/icon2-cem.svg</image:loc></image:image>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/icon3-cem.svg</image:loc></image:image>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/icon4-cem.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.cem-expertcomptable.fr/les-comites-sociaux-et-economiques-cse.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" media="only screen and (max-width: 370px)" href="https://www.cem-expertcomptable.fr/phone/les-comites-sociaux-et-economiques-cse.html"/>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/logo-blanc-cem.svg</image:loc></image:image>
-    <image:image><image:loc>https://www.cem-expertcomptable.fr/images/fleche-bleu-cem.svg</image:loc></image:image>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.cem-expertcomptable.fr/</loc><lastmod>2026-04-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/les-comites-sociaux-et-economiques-cse.html</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/expert-comptable-agde.html</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/expert-comptable-paris.html</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/expert-comptable-beziers.html</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/expert-comptable-sete.html</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/</loc><lastmod>2026-04-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/frais-de-repas-2026.html</loc><lastmod>2026-01-15</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/revalorisation-smic-2026.html</loc><lastmod>2026-01-05</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/facturation-electronique-2026.html</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/seuils-cse-2026.html</loc><lastmod>2026-03-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/blog/optimisation-remuneration-dirigeant.html</loc><lastmod>2026-03-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/mentions-legales.html</loc><lastmod>2026-04-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.cem-expertcomptable.fr/politique-confidentialite.html</loc><lastmod>2026-04-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
