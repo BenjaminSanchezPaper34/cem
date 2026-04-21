@@ -415,9 +415,20 @@ to use and available for download at: http://adobemuseexpert.com/
          <p>5 rue Grand Cap, 34300 Agde - <span id="u1012-2">04 48 08 94 19</span></p>
         </div>
         <div class="grpelem" id="u1062"><!-- custom html -->
-         <!-- Elfsight AI Chatbot | CEM - AGDE -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<iframe src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" loading="lazy" title="Chatbot CEM" style="position:fixed;bottom:0;right:0;width:420px;height:650px;max-width:100vw;max-height:100vh;border:0;z-index:9999;"></iframe><!--cbm-->
+         <!-- Chatbot CEM : bulle custom + iframe Elfsight -->
+<style>
+.cem-chat-fab{position:fixed;bottom:24px;right:24px;width:64px;height:64px;border-radius:50%;border:0;background:#0b1d3a;color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(11,29,58,.35);z-index:10000;display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.cem-chat-fab:hover{transform:scale(1.06)}
+.cem-chat-fab svg{width:30px;height:30px;fill:#fff}
+.cem-chat-frame{position:fixed;bottom:104px;right:24px;width:380px;height:560px;max-width:calc(100vw - 32px);max-height:calc(100vh - 130px);border:0;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.25);z-index:9999;background:#fff;display:none}
+.cem-chat-frame.open{display:block}
+@media (max-width:480px){.cem-chat-frame{right:8px;left:8px;width:auto;bottom:88px}}
+</style>
+<button type="button" class="cem-chat-fab" aria-label="Ouvrir le chatbot CEM" onclick="var f=document.getElementById('cemChatFrame');var o=f.classList.toggle('open');this.querySelector('.ico-chat').style.display=o?'none':'block';this.querySelector('.ico-close').style.display=o?'block':'none';if(o&&!f.src)f.src=f.dataset.src;">
+  <svg class="ico-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
+</button>
+<iframe id="cemChatFrame" class="cem-chat-frame" data-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Chatbot CEM" loading="lazy"></iframe>
         </div>
        </div>
        <a class="nonblock nontext clearfix colelem" id="u229-4" href="mailto:paul.marsault@cem-expertcomptable.fr"><!-- content --><p>cem@cem-expertcomptable.fr</p></a>
