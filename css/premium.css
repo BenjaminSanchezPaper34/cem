@@ -154,6 +154,32 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   transform: rotate(90deg);
 }
 
+/* Bouton Blog ajouté dans la nav Muse (même style que Missions/CSE/Contact) */
+#u258-4 {
+  z-index: 240;
+  width: 116px;
+  min-height: 32px;
+  position: relative;
+  margin-right: -10000px;
+  margin-top: 38px;
+  left: 426px;
+}
+#u258-4:hover {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 32px;
+  width: 116px;
+  margin: 38px -10000px 0 0;
+}
+#u258-4 > p {
+  color: #fff;
+  font-family: davis-sans, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  line-height: 32px;
+  margin: 0;
+}
+
 /* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
