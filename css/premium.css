@@ -180,6 +180,36 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   margin: 0;
 }
 
+/* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */
+.cem-subbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  padding: 22px 16px 30px;
+  background: #081526;
+  font-family: davis-sans, "Helvetica Neue", Arial, sans-serif;
+}
+.cem-subbar a {
+  color: rgba(255,255,255,.7);
+  font-size: 13px;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: color .25s var(--cem-ease);
+  position: relative;
+}
+.cem-subbar a:hover { color: #fff; }
+.cem-subbar a:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -16px;
+  color: rgba(255,255,255,.3);
+}
+@media (max-width: 560px) {
+  .cem-subbar { gap: 6px 18px; }
+  .cem-subbar a:not(:last-child)::after { display: none; }
+}
+
 /* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
