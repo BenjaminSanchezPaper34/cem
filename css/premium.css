@@ -180,6 +180,88 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   margin: 0;
 }
 
+/* ===== Section "Nos outils" sur la landing ===== */
+.cem-tools-band {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #eef2f7;
+  padding: clamp(48px, 7vw, 88px) 24px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+}
+.cem-tools-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.cem-tools-head .cem-tools-eyebrow {
+  display: inline-block;
+  font-size: .8rem; text-transform: uppercase; letter-spacing: .14em;
+  color: #04529e; font-weight: 700; margin-bottom: 14px;
+}
+.cem-tools-head h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.12; letter-spacing: -.02em;
+  color: #0b1d3a; font-weight: 700;
+}
+.cem-tools-head p {
+  margin: 0 0 22px;
+  color: #4a5568; font-size: 1.02rem; line-height: 1.6;
+  max-width: 46ch;
+}
+.cem-tools-all {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #0b1d3a; font-weight: 600; font-size: .98rem;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(4,82,158,.35);
+  padding-bottom: 2px;
+  transition: border-color .3s var(--cem-ease), color .3s;
+}
+.cem-tools-all:hover { color: #04529e; border-color: #04529e; }
+
+.cem-tools-card {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3e7ef;
+  border-radius: 20px;
+  padding: 30px;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(11,29,58,.04), 0 24px 50px -34px rgba(11,29,58,.5);
+  transition: transform .4s var(--cem-ease), box-shadow .4s var(--cem-ease), border-color .3s;
+}
+.cem-tools-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -30px rgba(11,29,58,.4);
+  border-color: rgba(4,82,158,.4);
+}
+.cem-tools-ic {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: linear-gradient(150deg, #0b1d3a, #081526);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.cem-tools-ic svg { width: 28px; height: 28px; fill: #fff; }
+.cem-tools-tag {
+  font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: #04529e; margin-bottom: 8px;
+}
+.cem-tools-card strong {
+  color: #0b1d3a; font-size: 1.25rem; font-weight: 700; line-height: 1.25;
+  letter-spacing: -.01em; margin-bottom: 16px;
+}
+.cem-tools-go { color: #04529e; font-weight: 600; font-size: .95rem; }
+@media (max-width: 760px) {
+  .cem-tools-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+
 /* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */
 .cem-subbar {
   display: flex;
