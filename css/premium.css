@@ -154,22 +154,20 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   transform: rotate(90deg);
 }
 
-/* Bouton Blog ajouté dans la nav Muse (même style que Missions/CSE/Contact) */
-#u258-4 {
+/* Onglet "Outils" (dropdown) dans la nav Muse — même style que les autres boutons.
+   Réorganisation : Missions · CSE · Outils · Contact */
+#u257-4 { left: 426px !important; }  /* Missions */
+#u254-4 { left: 554px !important; }  /* CSE */
+#u241-4 { left: 810px !important; }  /* Contact */
+#u258-4 {                            /* Outils */
   z-index: 240;
   width: 116px;
   min-height: 32px;
   position: relative;
   margin-right: -10000px;
   margin-top: 38px;
-  left: 426px;
-}
-#u258-4:hover {
-  padding-top: 0;
-  padding-bottom: 0;
-  min-height: 32px;
-  width: 116px;
-  margin: 38px -10000px 0 0;
+  left: 682px;
+  overflow: visible !important;
 }
 #u258-4 > p {
   color: #fff;
@@ -178,86 +176,62 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   text-align: center;
   line-height: 32px;
   margin: 0;
+  cursor: default;
 }
 
-/* ===== Section "Nos outils" sur la landing ===== */
-.cem-tools-band {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 960px;
-  margin: 8px auto 48px;
-  background: #eef2f7;
-  border-radius: 24px;
-  padding: clamp(32px, 5vw, 60px) clamp(24px, 4vw, 56px);
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  overflow: hidden;
+/* Menu déroulant Outils */
+.cem-has-dd { overflow: visible !important; }
+.cem-dd {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 232px;
+  background: #0b1d3a;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 18px 44px rgba(8,21,38,.45);
+  z-index: 9999;
+  text-align: left;
 }
-.cem-tools-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+/* pont invisible pour ne pas perdre le survol entre le bouton et le menu */
+.cem-dd::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: 0; right: 0; height: 10px;
+}
+.cem-has-dd:hover .cem-dd,
+.cem-has-dd:focus-within .cem-dd { display: block; }
+.cem-dd a,
+.cem-dd .cem-dd-soon {
+  display: flex;
   align-items: center;
-}
-.cem-tools-band * { box-sizing: border-box; }
-.cem-tools-head .cem-tools-eyebrow {
-  display: inline-block;
-  font-size: .8rem; text-transform: uppercase; letter-spacing: .14em;
-  color: #04529e; font-weight: 700; margin-bottom: 14px;
-}
-.cem-tools-head h2 {
-  margin: 0 0 14px;
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  line-height: 1.12; letter-spacing: -.02em;
-  color: #0b1d3a; font-weight: 700;
-}
-.cem-tools-head p {
-  margin: 0 0 22px;
-  color: #4a5568; font-size: 1.02rem; line-height: 1.6;
-  max-width: 46ch;
-}
-.cem-tools-all {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: #0b1d3a; font-weight: 600; font-size: .98rem;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-family: davis-sans, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #fff;
   text-decoration: none;
-  border-bottom: 2px solid rgba(4,82,158,.35);
-  padding-bottom: 2px;
-  transition: border-color .3s var(--cem-ease), color .3s;
+  white-space: nowrap;
+  transition: background .2s ease;
 }
-.cem-tools-all:hover { color: #04529e; border-color: #04529e; }
-
-.cem-tools-card {
-  display: flex; flex-direction: column;
-  background: #fff;
-  border: 1px solid #e3e7ef;
-  border-radius: 20px;
-  padding: 30px;
-  text-decoration: none;
-  box-shadow: 0 1px 0 rgba(11,29,58,.04), 0 24px 50px -34px rgba(11,29,58,.5);
-  transition: transform .4s var(--cem-ease), box-shadow .4s var(--cem-ease), border-color .3s;
-}
-.cem-tools-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px -30px rgba(11,29,58,.4);
-  border-color: rgba(4,82,158,.4);
-}
-.cem-tools-ic {
-  width: 56px; height: 56px; border-radius: 14px;
-  background: linear-gradient(150deg, #0b1d3a, #081526);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 20px;
-}
-.cem-tools-ic svg { width: 28px; height: 28px; fill: #fff; }
-.cem-tools-tag {
-  font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  color: #04529e; margin-bottom: 8px;
-}
-.cem-tools-card strong {
-  color: #0b1d3a; font-size: 1.25rem; font-weight: 700; line-height: 1.25;
-  letter-spacing: -.01em; margin-bottom: 16px;
-}
-.cem-tools-go { color: #04529e; font-weight: 600; font-size: .95rem; }
-@media (max-width: 760px) {
-  .cem-tools-inner { grid-template-columns: 1fr; gap: 28px; }
+.cem-dd a:hover { background: rgba(255,255,255,.12); }
+.cem-dd .cem-dd-soon { color: rgba(255,255,255,.5); cursor: default; }
+.cem-dd .cem-dd-soon em {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8fb9e0;
+  background: rgba(143,185,224,.16);
+  padding: 2px 7px;
+  border-radius: 999px;
 }
 
 /* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */

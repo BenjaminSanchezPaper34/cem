@@ -71,8 +71,40 @@ a:hover { color: var(--cem-navy); }
 }
 .cem-nav-links a.cta:hover { background: var(--cem-blue); color: #fff; }
 
+/* Onglet "Outils" avec menu déroulant */
+.cem-nav-dd { position: relative; display: inline-flex; }
+.cem-nav-dd-btn {
+  padding: 10px 16px; border-radius: 999px;
+  color: var(--cem-navy); font-weight: 500; font-size: .95rem;
+  border: 1px solid transparent; background: none; cursor: pointer;
+  font-family: inherit; display: inline-flex; align-items: center; gap: 5px;
+  transition: background .25s var(--cem-ease);
+}
+.cem-nav-dd-btn::after { content: "▾"; font-size: .78em; opacity: .65; }
+.cem-nav-dd-btn:hover { background: var(--cem-bg-2); }
+.cem-nav-dd-menu {
+  display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  min-width: 244px; background: #0b1d3a; border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px; padding: 8px; box-shadow: 0 18px 44px rgba(8,21,38,.4); z-index: 200;
+}
+.cem-nav-dd-menu::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+.cem-nav-dd:hover .cem-nav-dd-menu,
+.cem-nav-dd:focus-within .cem-nav-dd-menu { display: block; }
+.cem-nav-dd-menu a, .cem-nav-dd-menu .cem-nav-soon {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 13px; border-radius: 8px; font-size: .92rem; color: #fff;
+  text-decoration: none; white-space: nowrap; transition: background .2s;
+}
+.cem-nav-dd-menu a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.cem-nav-dd-menu .cem-nav-soon { color: rgba(255,255,255,.5); cursor: default; }
+.cem-nav-dd-menu .cem-nav-soon em {
+  font-style: normal; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700;
+  color: #8fb9e0; background: rgba(143,185,224,.16); padding: 2px 7px; border-radius: 999px;
+}
+
 @media (max-width: 720px) {
   .cem-nav-links a:not(.cta):not(.keep) { display: none; }
+  .cem-nav-dd { display: none; }
   .cem-nav-inner { height: 60px; }
   .cem-logo img { height: 34px; }
   .cem-logo small { display: none; }
