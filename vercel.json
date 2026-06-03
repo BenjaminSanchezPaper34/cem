@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "^cem-expertcomptable\\.fr$" }],
+      "destination": "https://www.cem-expertcomptable.fr/$1",
+      "permanent": true
+    },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/home", "destination": "/", "permanent": true }
   ],
