@@ -263,6 +263,25 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   .cem-subbar a:not(:last-child)::after { display: none; }
 }
 
+/* Chatbot CEM — widget Elfsight hébergé (.elf.site) en iframe bas-droite.
+   Lanceur CEM natif visible ; clic = ouverture de la conversation. Fond transparent. */
+.cem-chatbot {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 420px;
+  height: 700px;
+  max-width: 100vw;
+  max-height: 100vh;
+  border: 0;
+  background: transparent;
+  z-index: 9998;
+  color-scheme: light;
+}
+@media (max-width: 480px) {
+  .cem-chatbot { width: 100vw; }
+}
+
 /* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
