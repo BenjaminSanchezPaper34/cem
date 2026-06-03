@@ -68,6 +68,11 @@
   });
   nodes.forEach(function(el){ el.classList.add('sr'); });
 
+  // Inclut aussi tout élément ayant déjà la classe .sr posée dans le HTML
+  document.querySelectorAll('.sr').forEach(function(el){
+    if (nodes.indexOf(el) === -1) nodes.push(el);
+  });
+
   if (!('IntersectionObserver' in window)) {
     nodes.forEach(function(el){ el.classList.add('in'); });
   } else {
