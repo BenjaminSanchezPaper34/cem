@@ -1,0 +1,175 @@
+/* ===========================================================
+   Accueil CEM — page responsive unique (remplace l'export Muse)
+   Réutilise les variables et composants de sub.css (nav, footer)
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.home-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #081526;
+}
+.home-hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.home-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    radial-gradient(120% 90% at 80% 0%, rgba(47,125,196,.22), transparent 60%),
+    linear-gradient(180deg, rgba(8,21,38,.62) 0%, rgba(8,21,38,.40) 45%, rgba(8,21,38,.78) 100%);
+}
+.home-hero .wrap { position: relative; z-index: 2; }
+.home-hero__eyebrow {
+  display: inline-block; color: #8fb9e0; font-weight: 600;
+  font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 18px;
+}
+.home-hero h1 {
+  margin: 0 0 26px; color: #fff; font-weight: 700;
+  font-size: clamp(2.1rem, 5vw, 3.7rem); line-height: 1.08; letter-spacing: -.02em;
+  max-width: 16ch;
+}
+.home-hero__services {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 32px;
+}
+.home-hero__services span {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: #fff; font-size: .95rem; font-weight: 500;
+  padding: 9px 16px; border-radius: 999px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(4px);
+}
+.home-hero__services span::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: #8fb9e0;
+}
+.home-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn-primary, .btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; font-size: 1rem; text-decoration: none;
+  padding: 14px 28px; border-radius: 999px;
+  transition: transform .25s var(--cem-ease), background .25s, border-color .25s, box-shadow .25s;
+}
+.btn-primary { background: #fff; color: var(--cem-navy); }
+.btn-primary:hover { background: var(--cem-blue); color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(4,82,158,.35); }
+.btn-ghost { background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.5); }
+.btn-ghost:hover { background: rgba(255,255,255,.16); border-color: #fff; color: #fff; transform: translateY(-2px); }
+
+.home-hero__scroll {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 2;
+  color: rgba(255,255,255,.7); font-size: 1.6rem; animation: cem-bounce 2s infinite;
+}
+@keyframes cem-bounce { 0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,8px)} }
+
+/* ---------- Sections génériques ---------- */
+.home-section { padding: clamp(60px, 9vw, 110px) 0; }
+.home-section--soft { background: var(--cem-bg-2); }
+.home-section--dark { background: linear-gradient(160deg, #0b1d3a, #081526); color: #fff; }
+.home-head { max-width: 720px; margin: 0 0 48px; }
+.home-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.home-eyebrow {
+  display: inline-block; color: var(--cem-blue); font-weight: 700;
+  font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px;
+}
+.home-section--dark .home-eyebrow { color: #8fb9e0; }
+.home-h2 {
+  margin: 0 0 18px; color: var(--cem-navy); font-weight: 700;
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem); line-height: 1.12; letter-spacing: -.02em;
+}
+.home-section--dark .home-h2 { color: #fff; }
+.home-lead { margin: 0; color: var(--cem-muted); font-size: 1.1rem; line-height: 1.6; }
+.home-section--dark .home-lead { color: rgba(255,255,255,.82); }
+
+/* ---------- Fondateur / citation ---------- */
+.home-founder {
+  display: grid; grid-template-columns: 300px 1fr; gap: clamp(28px, 5vw, 60px); align-items: center;
+}
+.home-founder__photo {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 22px;
+  box-shadow: 0 30px 60px -30px rgba(8,21,38,.6);
+}
+.home-founder__quote p { font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.6; color: rgba(255,255,255,.9); margin: 0 0 18px; }
+.home-founder__quote .lead-q { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 600; color: #fff; }
+.home-founder__sign { display: inline-flex; align-items: center; gap: 12px; margin-top: 10px; }
+.home-founder__sign strong { color: #fff; font-size: 1.05rem; }
+.home-founder__sign span { color: #8fb9e0; font-size: .9rem; }
+
+/* ---------- Cabinet (texte + carte) ---------- */
+.home-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+.home-split__text p { color: var(--cem-ink); font-size: 1.02rem; line-height: 1.7; margin: 0 0 16px; }
+.home-split__text strong { color: var(--cem-navy); }
+.home-split__media {
+  border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px -34px rgba(11,29,58,.5);
+  border: 1px solid var(--cem-line); background: #fff; min-height: 420px; position: relative;
+}
+.home-split__media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Missions (4 cartes) ---------- */
+.home-missions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.mission-card {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px; padding: 32px;
+  transition: transform .4s var(--cem-ease), background .3s, border-color .3s;
+}
+.mission-card:hover { transform: translateY(-5px); background: rgba(255,255,255,.07); border-color: rgba(143,185,224,.4); }
+.mission-card__ic {
+  width: 54px; height: 54px; border-radius: 14px; background: rgba(143,185,224,.14);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+.mission-card__ic img { width: 26px; height: 26px; filter: brightness(0) invert(1); opacity: .92; }
+.mission-card h3 { margin: 0 0 14px; color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: -.01em; }
+.mission-card p { margin: 0 0 12px; color: rgba(255,255,255,.74); font-size: .96rem; line-height: 1.62; }
+.mission-card .mission-mission { color: #8fb9e0; font-weight: 500; }
+
+/* ---------- Avis ---------- */
+.home-reviews-frame { max-width: 1000px; margin: 0 auto; border-radius: 18px; overflow: hidden; }
+.home-reviews-frame iframe { width: 100%; height: 460px; border: 0; display: block; }
+
+/* ---------- Contact ---------- */
+.home-contact-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
+.home-contact__form { border-radius: 20px; overflow: hidden; min-height: 660px; position: relative; background: rgba(255,255,255,.02); }
+.home-contact__form iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.home-contact__aside { display: flex; flex-direction: column; gap: 22px; }
+.home-info-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px; padding: 24px;
+}
+.home-info-card h4 { margin: 0 0 6px; color: #fff; font-size: 1.05rem; }
+.home-info-card p, .home-info-card a { color: rgba(255,255,255,.78); font-size: .95rem; line-height: 1.6; text-decoration: none; }
+.home-info-card a:hover { color: #fff; }
+.home-info-card .tel { color: #8fb9e0; font-weight: 600; }
+.home-insta { border-radius: 16px; overflow: hidden; min-height: 360px; position: relative; }
+.home-insta iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Chatbot ---------- */
+.home-chatbot {
+  position: fixed; bottom: 0; right: 0;
+  width: 420px; height: 700px; max-width: 100vw; max-height: 100vh;
+  border: 0; background: transparent; z-index: 9998;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .home-founder { grid-template-columns: 1fr; }
+  .home-founder__photo { max-width: 240px; }
+  .home-split { grid-template-columns: 1fr; }
+  .home-missions-grid { grid-template-columns: 1fr; }
+  .home-contact-grid { grid-template-columns: 1fr; }
+  .home-contact__form { min-height: 700px; }
+}
+@media (max-width: 760px) {
+  /* Le chatbot iframe plein-écran bloquerait les interactions tactiles : masqué sur mobile
+     (formulaire de contact + appel direct disponibles). À réactiver via le widget Elfsight natif
+     une fois le domaine autorisé côté Elfsight. */
+  .home-chatbot { display: none; }
+}
+@media (max-width: 560px) {
+  .home-hero { min-height: 86vh; }
+  .home-hero__services span { font-size: .85rem; padding: 7px 13px; }
+  .home-cta-row { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-ghost { justify-content: center; }
+}
