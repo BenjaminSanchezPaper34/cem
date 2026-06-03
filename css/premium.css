@@ -170,6 +170,8 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .cem-lnav a, .cem-lnav button { pointer-events: auto; }
+/* Le menu déroulant et sa passerelle doivent capter le survol (sinon il se ferme avant le clic) */
+.cem-lnav-dd, .cem-lnav-dd-menu { pointer-events: auto; }
 
 .cem-lnav-logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
 .cem-lnav-logo img { height: 48px; width: auto; display: block; }
@@ -191,11 +193,12 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 .cem-lnav-dd { position: relative; display: inline-flex; }
 .cem-lnav-dd-btn::after { content: "▾"; font-size: .8em; opacity: .85; }
 .cem-lnav-dd-menu {
-  display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+  display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
   min-width: 248px; background: #0b1d3a; border: 1px solid rgba(255,255,255,.12);
   border-radius: 14px; padding: 8px; box-shadow: 0 22px 50px rgba(8,21,38,.5); z-index: 1001;
 }
-.cem-lnav-dd-menu::before { content: ""; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+/* passerelle large : comble l'espace bouton↔menu pour ne jamais perdre le survol */
+.cem-lnav-dd-menu::before { content: ""; position: absolute; top: -16px; left: -20px; right: -20px; height: 16px; }
 .cem-lnav-dd:hover .cem-lnav-dd-menu,
 .cem-lnav-dd:focus-within .cem-lnav-dd-menu { display: block; }
 .cem-lnav-dd-menu a, .cem-lnav-dd-menu .cem-lnav-soon {
