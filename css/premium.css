@@ -171,8 +171,9 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 }
 #u258-4 > p {
   color: #fff;
-  font-family: davis-sans, sans-serif;
-  font-size: 14px;
+  font-family: '__SF Pro Display_5', 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   text-align: center;
   line-height: 32px;
   margin: 0;
