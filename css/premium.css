@@ -182,25 +182,23 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 
 /* ===== Section "Nos outils" sur la landing ===== */
 .cem-tools-band {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 960px;
+  margin: 8px auto 48px;
   background: #eef2f7;
-  padding: clamp(48px, 7vw, 88px) 24px;
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 60px) clamp(24px, 4vw, 56px);
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   overflow: hidden;
 }
 .cem-tools-inner {
-  max-width: 1040px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
 }
+.cem-tools-band * { box-sizing: border-box; }
 .cem-tools-head .cem-tools-eyebrow {
   display: inline-block;
   font-size: .8rem; text-transform: uppercase; letter-spacing: .14em;
