@@ -214,14 +214,13 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 }
 
 /* Réseaux sociaux */
-.cem-lnav-socials { display: inline-flex; align-items: center; gap: 9px; margin-left: 6px; }
+.cem-lnav-socials { display: inline-flex; align-items: center; gap: 15px; margin-left: 12px; }
 .cem-lnav-socials a {
-  width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4);
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: background .25s var(--cem-ease), transform .25s var(--cem-ease);
+  display: inline-flex; align-items: center; justify-content: center; opacity: .9;
+  transition: opacity .25s var(--cem-ease), transform .25s var(--cem-ease);
 }
-.cem-lnav-socials a:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
-.cem-lnav-socials svg { width: 15px; height: 15px; fill: #fff; }
+.cem-lnav-socials a:hover { opacity: 1; transform: translateY(-2px); }
+.cem-lnav-socials img { width: 19px; height: 19px; display: block; }
 
 /* Responsive : sous 1000px on resserre, sous 760px on réduit (desktop Muse uniquement) */
 @media (max-width: 1080px) {
