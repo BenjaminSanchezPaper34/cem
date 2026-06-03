@@ -304,6 +304,21 @@ article.cem-article .meta .tag {
 article.cem-article p { margin: 0 0 18px; }
 article.cem-article .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
+/* FAQ accordéon (native details) */
+.cem-faq { max-width: 840px; margin: 8px auto 0; }
+.cem-faq details { border-bottom: 1px solid var(--cem-line); }
+.cem-faq summary {
+  cursor: pointer; padding: 20px 4px; font-weight: 600; font-size: 1.06rem; color: var(--cem-navy);
+  list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 18px;
+}
+.cem-faq summary::-webkit-details-marker { display: none; }
+.cem-faq summary::after {
+  content: "+"; flex: 0 0 auto; color: var(--cem-blue); font-size: 1.5rem; line-height: 1;
+  transition: transform .3s var(--cem-ease);
+}
+.cem-faq details[open] summary::after { transform: rotate(45deg); }
+.cem-faq details > p { margin: 0 4px 20px; color: var(--cem-muted); line-height: 1.65; }
+
 /* Reveal anim — masquage uniquement si JS actif (.cem-js), sinon contenu visible (SEO + fail-safe) */
 .cem-js .sr { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease); }
 .cem-js .sr.in { opacity: 1; transform: translateY(0); }
