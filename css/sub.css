@@ -236,7 +236,7 @@ article.cem-article .meta .tag {
 article.cem-article p { margin: 0 0 18px; }
 article.cem-article .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-/* Reveal anim */
-.sr { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease); }
-.sr.in { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) { .sr { opacity:1; transform:none; transition:none; } }
+/* Reveal anim — masquage uniquement si JS actif (.cem-js), sinon contenu visible (SEO + fail-safe) */
+.cem-js .sr { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease); }
+.cem-js .sr.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .cem-js .sr { opacity:1; transform:none; transition:none; } }

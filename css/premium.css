@@ -61,14 +61,14 @@ a[href*="facebook"]:hover {
 /* Logos header/footer */
 #u105:hover, #u1037:hover { transform: scale(1.03); }
 
-/* ======= Reveal-on-scroll ======= */
-.sr {
+/* ======= Reveal-on-scroll — masquage seulement si .cem-js (fail-safe sans JS) ======= */
+.cem-js .sr {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease);
   will-change: opacity, transform;
 }
-.sr.in {
+.cem-js .sr.in {
   opacity: 1;
   transform: translateY(0);
 }

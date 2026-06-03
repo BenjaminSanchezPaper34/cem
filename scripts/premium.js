@@ -50,6 +50,9 @@
 
   if (reduce) return;
 
+  // Active le masquage .sr maintenant qu'on est sûr de pouvoir révéler (fail-safe SEO)
+  document.documentElement.classList.add('cem-js');
+
   // ============ REVEAL ON SCROLL ============
   var selectors = [
     '.shadow.rounded-corners',
