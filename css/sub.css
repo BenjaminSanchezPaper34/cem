@@ -13,10 +13,15 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Police du site — SF Pro Display, identique à l'accueil */
+@font-face { font-family:'SF Pro Display'; src:url('/fonts/sf-pro-display-regular-webfont.woff') format('woff'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'SF Pro Display'; src:url('/fonts/sf-pro-display-medium-webfont.woff') format('woff'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'SF Pro Display'; src:url('/fonts/sf-pro-display-bold-webfont.woff') format('woff'); font-weight:700; font-style:normal; font-display:swap; }
+
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--cem-ink);
   background: var(--cem-bg);
   line-height: 1.6;
@@ -41,47 +46,55 @@ a:hover { color: var(--cem-navy); }
 /* ===== Container ===== */
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-/* ===== Nav ===== */
+/* ===== Nav (sombre, calquée sur l'accueil) ===== */
 .cem-nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,.85);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--cem-line);
+  background: rgba(11,29,58,.92);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .cem-nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
+  height: 72px;
 }
-.cem-logo { display: flex; align-items: center; gap: 12px; color: var(--cem-navy); }
-.cem-logo img { height: 42px; width: auto; }
-.cem-logo strong { font-size: 1.15rem; letter-spacing: .02em; }
-.cem-logo small { display: block; font-size: .72rem; color: var(--cem-muted); font-weight: 500; }
+.cem-logo { display: flex; align-items: center; gap: 12px; color: #fff; }
+.cem-logo img { height: 40px; width: auto; }
+.cem-logo strong { font-size: 1.12rem; letter-spacing: .02em; color: #fff; font-weight: 700; }
+.cem-logo small { display: block; font-size: .72rem; color: rgba(255,255,255,.6); font-weight: 500; }
 
-.cem-nav-links { display: flex; gap: 6px; align-items: center; }
-.cem-nav-links a {
-  padding: 10px 16px; border-radius: 999px;
-  color: var(--cem-navy); font-weight: 500; font-size: .95rem;
-  border: 1px solid transparent;
+.cem-nav-links { display: flex; gap: 10px; align-items: center; }
+.cem-nav-links > a {
+  padding: 9px 18px; border-radius: 999px;
+  color: #fff; font-weight: 700; font-size: .95rem;
+  border: 1px solid rgba(255,255,255,.5);
+  transition: background .25s var(--cem-ease), border-color .25s, transform .25s var(--cem-ease);
 }
-.cem-nav-links a:hover { background: var(--cem-bg-2); }
-.cem-nav-links a.cta {
-  background: var(--cem-navy); color: #fff;
-  border-color: var(--cem-navy);
+.cem-nav-links > a:hover { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px); }
+.cem-nav-links > a.cta { background: #fff; color: var(--cem-navy); border-color: #fff; }
+.cem-nav-links > a.cta:hover { background: var(--cem-blue); color: #fff; border-color: var(--cem-blue); }
+
+/* Réseaux sociaux dans la nav (comme l'accueil) */
+.cem-nav-socials { display: flex; gap: 8px; align-items: center; margin-left: 2px; }
+.cem-nav-socials a {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background .25s, transform .25s var(--cem-ease);
 }
-.cem-nav-links a.cta:hover { background: var(--cem-blue); color: #fff; }
+.cem-nav-socials a:hover { background: rgba(255,255,255,.14); transform: translateY(-1px); }
+.cem-nav-socials svg { width: 18px; height: 18px; fill: #fff; }
 
 /* Onglet "Outils" avec menu déroulant */
 .cem-nav-dd { position: relative; display: inline-flex; }
 .cem-nav-dd-btn {
-  padding: 10px 16px; border-radius: 999px;
-  color: var(--cem-navy); font-weight: 500; font-size: .95rem;
-  border: 1px solid transparent; background: none; cursor: pointer;
+  padding: 9px 18px; border-radius: 999px;
+  color: #fff; font-weight: 700; font-size: .95rem;
+  border: 1px solid rgba(255,255,255,.5); background: none; cursor: pointer;
   font-family: inherit; display: inline-flex; align-items: center; gap: 5px;
-  transition: background .25s var(--cem-ease);
+  transition: background .25s var(--cem-ease), border-color .25s, transform .25s var(--cem-ease);
 }
-.cem-nav-dd-btn::after { content: "▾"; font-size: .78em; opacity: .65; }
-.cem-nav-dd-btn:hover { background: var(--cem-bg-2); }
+.cem-nav-dd-btn::after { content: "▾"; font-size: .78em; opacity: .75; }
+.cem-nav-dd-btn:hover { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px); }
 .cem-nav-dd-menu {
   display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
   min-width: 244px; background: #0b1d3a; border: 1px solid rgba(255,255,255,.12);
@@ -102,49 +115,52 @@ a:hover { color: var(--cem-navy); }
   color: #8fb9e0; background: rgba(143,185,224,.16); padding: 2px 7px; border-radius: 999px;
 }
 
-@media (max-width: 720px) {
-  .cem-nav-links a:not(.cta):not(.keep) { display: none; }
+@media (max-width: 760px) {
+  .cem-nav-links > a:not(.cta):not(.keep) { display: none; }
   .cem-nav-dd { display: none; }
+  .cem-nav-socials { display: none; }
   .cem-nav-inner { height: 60px; }
   .cem-logo img { height: 34px; }
   .cem-logo small { display: none; }
 }
 
-/* ===== Hero ===== */
+/* ===== Hero (sombre, calqué sur l'accueil) ===== */
 .cem-hero {
-  padding: 88px 0 64px;
-  background: linear-gradient(180deg, #f4f6fb 0%, #fff 100%);
-  position: relative; overflow: hidden;
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(4,82,158,.30), transparent 60%),
+    linear-gradient(160deg, #0b1d3a 0%, #081526 100%);
+  position: relative; overflow: hidden; color: #fff;
 }
 .cem-hero::after {
-  content: ""; position: absolute;
-  top: -120px; right: -120px; width: 480px; height: 480px;
-  background: radial-gradient(circle, rgba(4,82,158,.12), transparent 65%);
-  pointer-events: none;
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 20px 20px; pointer-events: none;
 }
+.cem-hero .wrap { position: relative; z-index: 1; }
 .cem-hero .eyebrow {
   display: inline-block;
   font-size: .8rem; text-transform: uppercase; letter-spacing: .14em;
-  color: var(--cem-blue); font-weight: 600;
+  color: #8fb9e0; font-weight: 700;
   margin-bottom: 16px;
 }
 .cem-hero h1 {
   margin: 0 0 20px;
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   line-height: 1.1; letter-spacing: -.02em;
-  color: var(--cem-navy); font-weight: 700;
+  color: #fff; font-weight: 700;
 }
 .cem-hero p.lead {
   margin: 0;
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  color: var(--cem-muted);
+  color: rgba(255,255,255,.82);
   max-width: 720px;
 }
 .cem-hero .crumbs {
-  font-size: .85rem; color: var(--cem-muted); margin-bottom: 20px;
+  font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 20px;
 }
-.cem-hero .crumbs a { color: var(--cem-muted); }
-.cem-hero .crumbs a:hover { color: var(--cem-navy); }
+.cem-hero .crumbs a { color: rgba(255,255,255,.72); }
+.cem-hero .crumbs a:hover { color: #fff; }
 
 /* ===== Content ===== */
 .cem-content {
