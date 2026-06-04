@@ -3,3 +3,5 @@ Allow: /
 Disallow: /phone/
 
 Sitemap: https://www.cem-expertcomptable.fr/sitemap.xml
+
+Disallow: /_chrome/
