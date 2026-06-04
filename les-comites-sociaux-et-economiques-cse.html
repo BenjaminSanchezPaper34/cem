@@ -90,7 +90,7 @@
   
   <script type="text/javascript">
    // Redirection mobile fiable (remplace le seuil Muse obsolète 415px qui ne déclenchait plus sur les grands téléphones)
-(function(){try{var qs=location.search||'',hash=location.hash||'';if(/[?&]devicelock=desktop/.test(qs)){document.cookie='devicelock=desktop;path=/;max-age=31536000';return;}if(/[?&]devicelock=phone/.test(qs)){document.cookie='devicelock=;path=/;max-age=0';}else if(/(^|;\s*)devicelock=desktop/.test(document.cookie)){return;}if(location.pathname.indexOf('/phone')===0)return;var mn=Math.min(screen.width,screen.height);var touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;if(mn&&mn<=540&&touch){document.write('<style>body{visibility:hidden}</style>');location.replace('/phone/les-comites-sociaux-et-economiques-cse.html'+qs+hash);}}catch(e){}})();
+(function(){try{var qs=location.search||'',hash=location.hash||'';if(/[?&]devicelock=desktop/.test(qs)){return;}if(location.pathname.indexOf('/phone')===0)return;var mn=Math.min(screen.width,screen.height);var touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;if(mn&&mn<=540&&touch){document.write('<style>body{visibility:hidden}</style>');location.replace('/phone/les-comites-sociaux-et-economiques-cse.html'+qs+hash);}}catch(e){}})();
 
 // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
