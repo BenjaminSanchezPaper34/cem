@@ -112,6 +112,9 @@ a:hover { color: var(--cem-navy); }
   color: #8fb9e0; background: rgba(143,185,224,.16); padding: 2px 7px; border-radius: 999px;
 }
 
+/* "Accueil" : uniquement dans le menu burger (mobile) — sur desktop le logo sert d'accueil */
+@media (min-width: 761px) { .cem-nav-home { display: none; } }
+
 /* ===== Burger (mobile) ===== */
 .cem-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; }
 .cem-burger span { display: block; width: 24px; height: 2px; margin: 0 auto; background: #fff; border-radius: 2px; transition: transform .3s var(--cem-ease), opacity .2s; }

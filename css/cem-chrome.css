@@ -81,6 +81,8 @@
   color: #8fb9e0; background: rgba(143,185,224,.16); padding: 2px 7px; border-radius: 999px;
 }
 
+/* "Accueil" : uniquement dans le burger (mobile) */
+@media (min-width: 761px) { .cem-nav-home { display: none; } }
 .cem-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; }
 .cem-burger span { display: block; width: 24px; height: 2px; margin: 0 auto; background: #fff; border-radius: 2px; transition: transform .3s var(--cem-ease), opacity .2s; }
 .cem-nav.open .cem-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
