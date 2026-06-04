@@ -182,11 +182,16 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 /* Menu déroulant Outils */
 .cem-has-dd { overflow: visible !important; }
 .cem-dd {
-  display: none;
+  /* reste dans le flux pour pouvoir animer l'ouverture (fondu + léger glissé) */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   position: absolute;
   top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-6px);
+  -webkit-transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s linear .3s;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s linear .3s;
   min-width: 232px;
   background: #0b1d3a;
   border: 1px solid rgba(255,255,255,.12);
@@ -203,7 +208,14 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   top: -10px; left: 0; right: 0; height: 10px;
 }
 .cem-has-dd:hover .cem-dd,
-.cem-has-dd:focus-within .cem-dd { display: block; }
+.cem-has-dd:focus-within .cem-dd {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  -webkit-transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s;
+}
 .cem-dd a,
 .cem-dd .cem-dd-soon {
   display: flex;
@@ -263,9 +275,12 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   font-weight: 700;
   cursor: pointer;
   z-index: 236;
+  /* même transition douce que les boutons Muse (.animateStates : 0.3s ease-in-out) */
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 #u258-4 > p { margin: 0; }                 /* texte centré comme les autres */
-#u258-4:hover {                            /* même surbrillance que les autres */
+#u258-4:hover {                            /* même surbrillance progressive que les autres */
   background-color: #FFFFFF;
   background-color: rgba(255,255,255,0.25);
 }
