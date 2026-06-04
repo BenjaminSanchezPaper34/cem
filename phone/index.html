@@ -76,6 +76,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     font-weight:700; color:#8fb9e0; background:rgba(143,185,224,.16);
     padding:2px 7px; border-radius:999px; margin-left:6px;
   }
+  /* Chatbot masqué sur mobile : son iframe transparent plein-écran (fixed, 620px) recouvrait et bloquait tous les onglets */
+  iframe[src*="36ae34fa99b74eafa5b50a1a0e152951"] { display:none !important; }
+  /* Réseaux sociaux réduits (45px -> 34px) et recentrés */
+  #u2630, #u2631, #u2632 { width:34px !important; height:34px !important; background-size:contain !important; }
+  #u2630 img, #u2631 img, #u2632 img { width:100% !important; height:100% !important; }
+  #u2632 { left:110px !important; } /* Facebook */
+  #u2630 { left:172px !important; } /* Instagram */
+  #u2631 { left:234px !important; } /* LinkedIn */
  </style>
  </head>
  <body>
@@ -125,9 +133,9 @@ to use and available for download at: http://adobemuseexpert.com/
 </video>
       </div>
      </div>
-     <a class="nonblock nontext anim_swing rounded-corners Bouton rgba-background clearfix grpelem" id="u2621-4" href="index.html#contact"><!-- content --><p>Contact</p></a>
-     <a class="nonblock nontext Bouton rgba-background clearfix grpelem" id="u2622-4" href="les-comites-sociaux-et-economiques-cse.html"><!-- content --><p>CSE</p></a>
-     <a class="nonblock nontext anim_swing Bouton rgba-background clearfix grpelem" id="u2623-4" href="index.html#missions"><!-- content --><p>Missions</p></a>
+     <a class="nonblock nontext anim_swing rounded-corners Bouton rgba-background clearfix grpelem" id="u2621-4" href="#contact"><!-- content --><p>Contact</p></a>
+     <a class="nonblock nontext Bouton rgba-background clearfix grpelem" id="u2622-4" href="/phone/les-comites-sociaux-et-economiques-cse.html"><!-- content --><p>CSE</p></a>
+     <a class="nonblock nontext anim_swing Bouton rgba-background clearfix grpelem" id="u2623-4" href="#missions"><!-- content --><p>Missions</p></a>
      <div class="grpelem" id="cem-m-outils" role="button" tabindex="0" aria-haspopup="true" aria-label="Outils"><p>Outils</p><div class="cem-m-dd"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><span class="cem-m-soon">Facturation électronique<em>Bientôt</em></span></div></div>
      <script>(function(){var b=document.getElementById('cem-m-outils');if(!b)return;b.addEventListener('click',function(e){if(e.target.closest('.cem-m-dd'))return;e.stopPropagation();b.classList.toggle('open');});document.addEventListener('click',function(){b.classList.remove('open');});})();</script>
      <a class="nonblock nontext museBGSize grpelem" id="u2630" href="https://www.instagram.com/cem.expertise.comptable/" target="_blank" rel="noopener noreferrer"><!-- simple frame --></a>
