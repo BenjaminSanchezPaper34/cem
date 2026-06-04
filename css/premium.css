@@ -154,82 +154,84 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   transform: rotate(90deg);
 }
 
-/* ===== Nav d'accueil modernisée (remplace la nav Muse pixel-positionnée) ===== */
-/* Masque l'ancienne nav Muse (logo, tagline, 4 boutons, 3 réseaux) */
-#u105, #u336-4, #u257-4, #u254-4, #u258-4, #u241-4, #u245, #u246, #u247 { display: none !important; }
-
-.cem-lnav {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 20px clamp(20px, 4vw, 52px) 40px;
-  background: linear-gradient(180deg, rgba(8,21,38,.5) 0%, rgba(8,21,38,.18) 55%, rgba(8,21,38,0) 100%);
-  font-family: '__SF Pro Display_5', 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  pointer-events: none;
+/* Onglet "Outils" (dropdown) dans la nav Muse — même style que les autres boutons.
+   Réorganisation : Missions · CSE · Outils · Contact */
+#u257-4 { left: 426px !important; }  /* Missions */
+#u254-4 { left: 554px !important; }  /* CSE */
+#u241-4 { left: 810px !important; }  /* Contact */
+#u258-4 {                            /* Outils */
+  z-index: 240;
+  width: 116px;
+  min-height: 32px;
+  position: relative;
+  margin-right: -10000px;
+  margin-top: 38px;
+  left: 682px;
+  overflow: visible !important;
 }
-.cem-lnav-inner {
-  max-width: 1320px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-}
-.cem-lnav a, .cem-lnav button { pointer-events: auto; }
-/* Le menu déroulant et sa passerelle doivent capter le survol (sinon il se ferme avant le clic) */
-.cem-lnav-dd, .cem-lnav-dd-menu { pointer-events: auto; }
-
-.cem-lnav-logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-.cem-lnav-logo img { height: 48px; width: auto; display: block; }
-.cem-lnav-logo span { color: #fff; font-size: 13px; font-weight: 500; opacity: .92; white-space: nowrap; letter-spacing: .01em; }
-
-.cem-lnav-links { display: flex; align-items: center; gap: 10px; }
-.cem-lnav-links > a, .cem-lnav-dd-btn {
-  color: #fff; font-size: 15px; font-weight: 600; text-decoration: none;
-  padding: 9px 20px; border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
-  background: rgba(255,255,255,.05); cursor: pointer; font-family: inherit;
-  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-  transition: background .25s var(--cem-ease), border-color .25s var(--cem-ease), transform .25s var(--cem-ease);
-}
-.cem-lnav-links > a:hover, .cem-lnav-dd-btn:hover {
-  background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px);
+#u258-4 > p {
+  color: #fff;
+  font-family: davis-sans, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  line-height: 32px;
+  margin: 0;
+  cursor: default;
 }
 
-/* Dropdown Outils */
-.cem-lnav-dd { position: relative; display: inline-flex; }
-.cem-lnav-dd-btn::after { content: "▾"; font-size: .8em; opacity: .85; }
-.cem-lnav-dd-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-  min-width: 248px; background: #0b1d3a; border: 1px solid rgba(255,255,255,.12);
-  border-radius: 14px; padding: 8px; box-shadow: 0 22px 50px rgba(8,21,38,.5); z-index: 1001;
+/* Menu déroulant Outils */
+.cem-has-dd { overflow: visible !important; }
+.cem-dd {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 232px;
+  background: #0b1d3a;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 18px 44px rgba(8,21,38,.45);
+  z-index: 9999;
+  text-align: left;
 }
-/* passerelle large : comble l'espace bouton↔menu pour ne jamais perdre le survol */
-.cem-lnav-dd-menu::before { content: ""; position: absolute; top: -16px; left: -20px; right: -20px; height: 16px; }
-.cem-lnav-dd:hover .cem-lnav-dd-menu,
-.cem-lnav-dd:focus-within .cem-lnav-dd-menu { display: block; }
-.cem-lnav-dd-menu a, .cem-lnav-dd-menu .cem-lnav-soon {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 11px 14px; border-radius: 9px; font-size: 14px; font-weight: 500;
-  color: #fff; text-decoration: none; white-space: nowrap; transition: background .2s ease;
+/* pont invisible pour ne pas perdre le survol entre le bouton et le menu */
+.cem-dd::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: 0; right: 0; height: 10px;
 }
-.cem-lnav-dd-menu a:hover { background: rgba(255,255,255,.12); }
-.cem-lnav-dd-menu .cem-lnav-soon { color: rgba(255,255,255,.5); cursor: default; }
-.cem-lnav-dd-menu .cem-lnav-soon em {
-  font-style: normal; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700;
-  color: #8fb9e0; background: rgba(143,185,224,.16); padding: 2px 7px; border-radius: 999px;
+.cem-has-dd:hover .cem-dd,
+.cem-has-dd:focus-within .cem-dd { display: block; }
+.cem-dd a,
+.cem-dd .cem-dd-soon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-family: davis-sans, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease;
 }
-
-/* Réseaux sociaux */
-.cem-lnav-socials { display: inline-flex; align-items: center; gap: 15px; margin-left: 12px; }
-.cem-lnav-socials a {
-  display: inline-flex; align-items: center; justify-content: center; opacity: .9;
-  transition: opacity .25s var(--cem-ease), transform .25s var(--cem-ease);
-}
-.cem-lnav-socials a:hover { opacity: 1; transform: translateY(-2px); }
-.cem-lnav-socials img { width: 19px; height: 19px; display: block; }
-
-/* Responsive : sous 1000px on resserre, sous 760px on réduit (desktop Muse uniquement) */
-@media (max-width: 1080px) {
-  .cem-lnav-logo span { display: none; }
-  .cem-lnav-links { gap: 7px; }
-  .cem-lnav-links > a, .cem-lnav-dd-btn { padding: 8px 15px; font-size: 14px; }
-}
-@media (max-width: 860px) {
-  .cem-lnav-socials { display: none; }
+.cem-dd a:hover { background: rgba(255,255,255,.12); }
+.cem-dd .cem-dd-soon { color: rgba(255,255,255,.5); cursor: default; }
+.cem-dd .cem-dd-soon em {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8fb9e0;
+  background: rgba(143,185,224,.16);
+  padding: 2px 7px;
+  border-radius: 999px;
 }
 
 /* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */
@@ -260,25 +262,6 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 @media (max-width: 560px) {
   .cem-subbar { gap: 6px 18px; }
   .cem-subbar a:not(:last-child)::after { display: none; }
-}
-
-/* Chatbot CEM — widget Elfsight hébergé (.elf.site) en iframe bas-droite.
-   Lanceur CEM natif visible ; clic = ouverture de la conversation. Fond transparent. */
-.cem-chatbot {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 420px;
-  height: 700px;
-  max-width: 100vw;
-  max-height: 100vh;
-  border: 0;
-  background: transparent;
-  z-index: 9998;
-  color-scheme: light;
-}
-@media (max-width: 480px) {
-  .cem-chatbot { width: 100vw; }
 }
 
 /* Accessibilité */

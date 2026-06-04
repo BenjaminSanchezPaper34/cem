@@ -15,46 +15,6 @@
     document.body.classList.add('cem-loaded');
   });
 
-  // ============ MENU MOBILE (pages internes, nav .cem-nav) ============
-  (function(){
-    var inner = document.querySelector('.cem-nav .cem-nav-inner');
-    if (!inner) return;
-    var burger = document.createElement('button');
-    burger.type = 'button';
-    burger.className = 'cem-burger';
-    burger.setAttribute('aria-label', 'Ouvrir le menu');
-    burger.setAttribute('aria-expanded', 'false');
-    burger.innerHTML = '<span></span><span></span><span></span>';
-    inner.appendChild(burger);
-
-    var menu = document.createElement('div');
-    menu.className = 'cem-mobile-menu';
-    menu.innerHTML =
-      '<a href="/#services">Missions</a>' +
-      '<a href="/les-comites-sociaux-et-economiques-cse.html">CSE</a>' +
-      '<a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a>' +
-      '<span class="cem-mm-soon">Facturation électronique <em>Bientôt</em></span>' +
-      '<a href="/blog/">Blog</a>' +
-      '<a class="cem-mm-cta" href="/#contact">Contact</a>' +
-      '<div class="cem-mm-socials">' +
-        '<a href="https://www.facebook.com/conseilexpertisemanagement" target="_blank" rel="noopener" aria-label="Facebook"><img src="/images/facebook-blanc-ledix9.svg" alt="Facebook" width="22" height="22"></a>' +
-        '<a href="https://www.instagram.com/cem.expertise.comptable/" target="_blank" rel="noopener" aria-label="Instagram"><img src="/images/instagram-blanc-ledix9.svg" alt="Instagram" width="22" height="22"></a>' +
-        '<a href="https://www.linkedin.com/company/cem-expertcomptable" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="/images/linkedin-blanc-cem.svg" alt="LinkedIn" width="22" height="22"></a>' +
-      '</div>';
-    document.body.appendChild(menu);  /* sur body : le backdrop-filter de la nav confinerait un enfant fixed */
-
-    var close = function(){ menu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
-    burger.addEventListener('click', function(){
-      var open = !menu.classList.contains('open');
-      menu.classList.toggle('open', open);
-      burger.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    menu.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
-    window.addEventListener('resize', function(){ if (window.innerWidth > 720) close(); });
-  })();
-
   // ============ TRANSITION DE PAGE ============
   // View Transitions API si dispo, sinon fade-out body
   document.addEventListener('click', function(e){
