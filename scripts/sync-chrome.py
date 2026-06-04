@@ -23,8 +23,9 @@ footer = open('_chrome/footer.part', encoding='utf-8').read().rstrip('\n')
 pages = []
 for pat in ('*.html', 'blog/*.html', 'outils/*.html'):
     pages += glob.glob(pat)
-# Uniquement les pages qui utilisent le design system partagé (sub.css)
-pages = [p for p in sorted(set(pages)) if 'css/sub.css' in open(p, encoding='utf-8').read()]
+# Toutes les pages qui portent le header partagé (.cem-nav) :
+# pages internes (sub.css) ET pages Muse migrées (accueil, CSE via cem-chrome.css)
+pages = [p for p in sorted(set(pages)) if 'class="cem-nav"' in open(p, encoding='utf-8').read()]
 
 n_head = n_foot = 0
 for f in pages:
