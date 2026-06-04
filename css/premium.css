@@ -296,6 +296,12 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
 #u258-4 { left: 682px !important; }        /* Outils  */
 #u241-4 { left: 810px !important; }        /* Contact */
 
+/* Resserre l'écart entre la section Avis et la section Instagram/Contact :
+   - #u354 = conteneur des avis, surdimensionné (600px) vs le contenu réel (~250px) -> beaucoup de vide
+   - #u1156 = bande-espaceur Muse vide de 120px placée après les avis */
+#u354  { height: 340px !important; min-height: 340px !important; }
+#u1156 { height: 28px !important; min-height: 28px !important; }
+
 /* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */
 .cem-subbar {
   display: flex;
