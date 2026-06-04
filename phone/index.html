@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html class="nojs html css_verticalspacer" lang="fr-FR">
  <head>
+  <script>/* Version mobile : toujours ouvrir en haut de page. La nav mobile (bouton Missions) laissait #missions dans l'URL -> au rechargement le navigateur restaurait la position au milieu de page (section missions). On nettoie l'ancre au chargement. */
+  if(/^#(missions|contact)$/.test(location.hash||'')){try{if('scrollRestoration' in history)history.scrollRestoration='manual';history.replaceState(null,'',location.pathname+location.search);}catch(e){}}</script>
 
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="description" content="Cabinet d’expertise comptable à Agde, CEM accompagne les dirigeants dans le pilotage, la stratégie d’entreprise, l’optimisation financière et la facturation électronique."/>
