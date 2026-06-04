@@ -123,16 +123,11 @@ a:hover { color: var(--cem-navy); }
 
 /* ===== Hero (sombre, calqué sur l'accueil) ===== */
 .cem-hero {
-  padding: 124px 0 76px;
-  background:
-    radial-gradient(120% 90% at 85% 0%, rgba(4,82,158,.30), transparent 60%),
-    linear-gradient(160deg, #0b1d3a 0%, #081526 100%);
+  padding: 132px 0 84px;
   position: relative; overflow: hidden; color: #fff;
-}
-.cem-hero::after {
-  content: ""; position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size: 20px 20px; pointer-events: none;
+  background:
+    linear-gradient(168deg, rgba(11,29,58,.66) 0%, rgba(8,21,38,.80) 100%),
+    url('/images/equipe-cem.webp') center 24% / cover no-repeat;
 }
 .cem-hero .wrap { position: relative; z-index: 1; }
 .cem-hero .eyebrow {
