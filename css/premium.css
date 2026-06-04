@@ -276,7 +276,7 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   font-family: '__SF Pro Display_5';
   font-weight: 700;
   cursor: pointer;
-  z-index: 236;
+  z-index: 510; /* au-dessus des bandes de fond du hero (CSE ~500) pour s'afficher sur toutes les pages */
   /* même transition douce que les boutons Muse (.animateStates : 0.3s ease-in-out) */
   -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
   transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
