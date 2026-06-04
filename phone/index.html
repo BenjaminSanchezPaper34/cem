@@ -34,6 +34,49 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 
 */
 -->
+ <style>
+  /* === Onglet Outils — ajout mobile (hors Muse), aligné sur les boutons existants === */
+  /* Re-espacement des 4 onglets dans la bande existante (avant les réseaux à 559px) */
+  #u2622-4 { margin-top:422px !important; } /* CSE remonte */
+  #u2621-4 { margin-top:514px !important; } /* Contact descend pour laisser place à Outils */
+  /* Bouton Outils : style strictement identique aux voisins */
+  #cem-m-outils {
+    z-index:50; width:182px; min-height:36px; box-sizing:border-box;
+    border:1px solid #FFFFFF; border-radius:19px; background-color:rgba(37,81,155,0.51);
+    line-height:36px; text-align:center; font-size:18px; color:#FFFFFF;
+    font-family:'__SF Pro Display_5'; font-weight:700;
+    position:relative; margin-right:-10000px; margin-top:468px; left:98px;
+    cursor:pointer; outline:none; -webkit-tap-highlight-color:transparent;
+  }
+  #cem-m-outils > p { margin:0; pointer-events:none; }
+  /* Menu déroulant (ouverture au tap) */
+  #cem-m-outils .cem-m-dd {
+    position:absolute; top:calc(100% + 8px); left:0; width:182px; box-sizing:border-box;
+    background:#0b1d3a; border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:6px;
+    box-shadow:0 18px 44px rgba(8,21,38,.5);
+    opacity:0; visibility:hidden; transform:translateY(-6px);
+    transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
+    z-index:9999; text-align:left;
+  }
+  #cem-m-outils.open .cem-m-dd,
+  #cem-m-outils:focus-within .cem-m-dd {
+    opacity:1; visibility:visible; transform:translateY(0);
+    transition:opacity .25s ease, transform .25s ease, visibility 0s;
+  }
+  #cem-m-outils .cem-m-dd a,
+  #cem-m-outils .cem-m-dd .cem-m-soon {
+    display:block; padding:11px 12px; border-radius:8px;
+    font-family:'__SF Pro Display_5'; font-weight:400; font-size:15px; line-height:1.3;
+    color:#fff; text-decoration:none; white-space:nowrap;
+  }
+  #cem-m-outils .cem-m-dd a:active { background:rgba(255,255,255,.14); }
+  #cem-m-outils .cem-m-dd .cem-m-soon { color:rgba(255,255,255,.55); }
+  #cem-m-outils .cem-m-dd .cem-m-soon em {
+    font-style:normal; font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:700; color:#8fb9e0; background:rgba(143,185,224,.16);
+    padding:2px 7px; border-radius:999px; margin-left:6px;
+  }
+ </style>
  </head>
  <body>
 
@@ -85,6 +128,8 @@ to use and available for download at: http://adobemuseexpert.com/
      <a class="nonblock nontext anim_swing rounded-corners Bouton rgba-background clearfix grpelem" id="u2621-4" href="index.html#contact"><!-- content --><p>Contact</p></a>
      <a class="nonblock nontext Bouton rgba-background clearfix grpelem" id="u2622-4" href="les-comites-sociaux-et-economiques-cse.html"><!-- content --><p>CSE</p></a>
      <a class="nonblock nontext anim_swing Bouton rgba-background clearfix grpelem" id="u2623-4" href="index.html#missions"><!-- content --><p>Missions</p></a>
+     <div class="grpelem" id="cem-m-outils" role="button" tabindex="0" aria-haspopup="true" aria-label="Outils"><p>Outils</p><div class="cem-m-dd"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><span class="cem-m-soon">Facturation électronique<em>Bientôt</em></span></div></div>
+     <script>(function(){var b=document.getElementById('cem-m-outils');if(!b)return;b.addEventListener('click',function(e){if(e.target.closest('.cem-m-dd'))return;e.stopPropagation();b.classList.toggle('open');});document.addEventListener('click',function(){b.classList.remove('open');});})();</script>
      <a class="nonblock nontext museBGSize grpelem" id="u2630" href="https://www.instagram.com/cem.expertise.comptable/" target="_blank" rel="noopener noreferrer"><!-- simple frame --></a>
      <a class="nonblock nontext museBGSize grpelem" id="u2631" href="https://www.linkedin.com/company/cem-expertcomptable" target="_blank" rel="noopener noreferrer"><!-- simple frame --></a>
      <a class="nonblock nontext museBGSize grpelem" id="u2632" href="https://www.facebook.com/conseilexpertisemanagement" target="_blank" rel="noopener noreferrer"><!-- simple frame --></a>
