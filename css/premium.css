@@ -212,8 +212,9 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   gap: 10px;
   padding: 10px 13px;
   border-radius: 8px;
-  font-family: davis-sans, "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
+  font-family: '__SF Pro Display_5', -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.3;
   color: #fff;
   text-decoration: none;
@@ -233,6 +234,50 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
   padding: 2px 7px;
   border-radius: 999px;
 }
+
+/* ===========================================================
+   Onglet "Outils" : alignement STRICT sur les autres onglets
+   (Missions / CSE / Contact sont des <a> Muse stylés par
+   master_a-gabarit.css + index.css ; "Outils" est un <div>
+   ajouté qui n'héritait d'aucune de ces règles).
+   Valable pour l'accueil et la page CSE (mêmes IDs).
+   =========================================================== */
+
+/* 1) Apparence identique aux 3 autres boutons de nav */
+#u258-4 {
+  width: 116px;
+  min-height: 32px;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: -10000px;
+  margin-top: 38px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFFFFF;
+  border-radius: 19px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-family: '__SF Pro Display_5';
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 236;
+}
+#u258-4 > p { margin: 0; }                 /* texte centré comme les autres */
+#u258-4:hover {                            /* même surbrillance que les autres */
+  background-color: #FFFFFF;
+  background-color: rgba(255,255,255,0.25);
+}
+
+/* 2) Réordonne les 4 onglets : Missions · CSE · Outils · Contact
+      (espacement de 128px conservé, identique à Muse).
+      Contact reste à 810px ; les !important neutralisent les
+      left:Xpx d'origine de index.css / page CSE css. */
+#u257-4 { left: 426px !important; }        /* Missions */
+#u254-4 { left: 554px !important; }        /* CSE */
+#u258-4 { left: 682px !important; }        /* Outils  */
+#u241-4 { left: 810px !important; }        /* Contact */
 
 /* Barre de liens utiles / légaux en bas de l'accueil et de la page CSE */
 .cem-subbar {
