@@ -132,6 +132,22 @@
 
   .fe-diag .q-foot{margin-top:24px;font-size:.78rem;color:var(--ink-soft);text-align:center;line-height:1.6}
   .fe-diag .q-foot a{color:var(--amber)}
+
+  /* ===== Hero illustré spécifique (validation de facture à l'écran) ===== */
+  /* Mobile : recadrage portrait */
+  .cem-hero{
+    background:
+      linear-gradient(168deg, rgba(11,29,58,.60) 0%, rgba(8,21,38,.82) 100%),
+      url('/images/facturex-hero-mobile.webp') center 28% / cover no-repeat !important;
+  }
+  /* Desktop : image paysage */
+  @media (min-width:768px){
+    .cem-hero{
+      background:
+        linear-gradient(108deg, rgba(8,21,38,.88) 0%, rgba(8,21,38,.60) 50%, rgba(8,21,38,.40) 100%),
+        url('/images/facturex-hero-desktop.webp') center 32% / cover no-repeat !important;
+    }
+  }
 </style>
 </head>
 <body>
