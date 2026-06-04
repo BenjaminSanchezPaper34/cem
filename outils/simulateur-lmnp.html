@@ -89,6 +89,22 @@
   .lmnp-app .tool-note{font-size:12.5px;color:var(--ink-soft);line-height:1.65;border-top:1px solid var(--line);padding-top:18px;margin-top:18px}
   .lmnp-app .tool-note strong{color:var(--ink)}
   @media(max-width:560px){.lmnp-app .results{grid-template-columns:1fr}}
+
+  /* ===== Hero illustré spécifique à la page LMNP (image bail/location) ===== */
+  /* Mobile : image portrait */
+  .cem-hero{
+    background:
+      linear-gradient(168deg, rgba(11,29,58,.62) 0%, rgba(8,21,38,.82) 100%),
+      url('/images/lmnp-hero-mobile.webp') center 26% / cover no-repeat !important;
+  }
+  /* Desktop : image paysage */
+  @media (min-width:768px){
+    .cem-hero{
+      background:
+        linear-gradient(110deg, rgba(8,21,38,.86) 0%, rgba(8,21,38,.58) 52%, rgba(8,21,38,.45) 100%),
+        url('/images/lmnp-hero-desktop.webp') center 38% / cover no-repeat !important;
+    }
+  }
 </style>
 </head>
 <body>
