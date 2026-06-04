@@ -53,23 +53,24 @@ a:hover { color: var(--cem-navy); }
 }
 .cem-nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 84px;
+  height: 96px;
 }
-.cem-logo { display: flex; align-items: center; gap: 12px; color: #fff; }
-.cem-logo img { height: 46px; width: auto; }
+.cem-logo { display: flex; align-items: center; gap: 14px; color: #fff; }
+.cem-logo img { height: 64px; width: auto; }
 .cem-logo strong { font-size: 1.12rem; letter-spacing: .02em; color: #fff; font-weight: 700; }
-.cem-logo small, .cem-logo-tag { display: block; font-size: .78rem; color: rgba(255,255,255,.82); font-weight: 500; }
+.cem-logo small, .cem-logo-tag { display: block; font-size: .92rem; color: rgba(255,255,255,.9); font-weight: 500; }
 
-.cem-nav-links { display: flex; gap: 10px; align-items: center; }
+.cem-nav-links { display: flex; gap: 12px; align-items: center; }
 .cem-nav-links > a {
-  padding: 9px 18px; border-radius: 999px;
-  color: #fff; font-weight: 700; font-size: .95rem;
-  border: 1px solid rgba(255,255,255,.5);
+  min-width: 104px; padding: 10px 18px; border-radius: 999px;
+  color: #fff; font-weight: 700; font-size: 1rem; text-align: center;
+  border: 1px solid rgba(255,255,255,.6);
   transition: background .25s var(--cem-ease), border-color .25s, transform .25s var(--cem-ease);
 }
-.cem-nav-links > a:hover { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px); }
-.cem-nav-links > a.cta { background: #fff; color: var(--cem-navy); border-color: #fff; }
-.cem-nav-links > a.cta:hover { background: var(--cem-blue); color: #fff; border-color: var(--cem-blue); }
+.cem-nav-links > a:hover { background: rgba(255,255,255,.25); border-color: #fff; transform: translateY(-1px); }
+/* Contact : même pilule outline que les autres (identique à l'accueil) */
+.cem-nav-links > a.cta { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.cem-nav-links > a.cta:hover { background: rgba(255,255,255,.25); color: #fff; border-color: #fff; }
 
 /* Réseaux sociaux dans la nav (comme l'accueil) */
 .cem-nav-socials { display: flex; gap: 8px; align-items: center; margin-left: 2px; }
@@ -84,14 +85,13 @@ a:hover { color: var(--cem-navy); }
 /* Onglet "Outils" avec menu déroulant */
 .cem-nav-dd { position: relative; display: inline-flex; }
 .cem-nav-dd-btn {
-  padding: 9px 18px; border-radius: 999px;
-  color: #fff; font-weight: 700; font-size: .95rem;
-  border: 1px solid rgba(255,255,255,.5); background: none; cursor: pointer;
-  font-family: inherit; display: inline-flex; align-items: center; gap: 5px;
+  min-width: 104px; padding: 10px 18px; border-radius: 999px;
+  color: #fff; font-weight: 700; font-size: 1rem; text-align: center;
+  border: 1px solid rgba(255,255,255,.6); background: none; cursor: pointer;
+  font-family: inherit; display: inline-flex; align-items: center; justify-content: center;
   transition: background .25s var(--cem-ease), border-color .25s, transform .25s var(--cem-ease);
 }
-.cem-nav-dd-btn::after { content: "▾"; font-size: .78em; opacity: .75; }
-.cem-nav-dd-btn:hover { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px); }
+.cem-nav-dd-btn:hover { background: rgba(255,255,255,.25); border-color: #fff; transform: translateY(-1px); }
 .cem-nav-dd-menu {
   display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
   min-width: 244px; background: #0b1d3a; border: 1px solid rgba(255,255,255,.12);
