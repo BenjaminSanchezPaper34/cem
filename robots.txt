@@ -1,7 +1,40 @@
+# CEM - Conseil Expertise Management — www.cem-expertcomptable.fr
+# Description du site pour les IA : https://www.cem-expertcomptable.fr/llms.txt
+
 User-agent: *
 Allow: /
 Disallow: /phone/
+Disallow: /_chrome/
+
+# Crawlers IA explicitement bienvenus (recherche générative : ChatGPT, Claude, Perplexity, Gemini…)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
 
 Sitemap: https://www.cem-expertcomptable.fr/sitemap.xml
-
-Disallow: /_chrome/

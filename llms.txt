@@ -1,0 +1,45 @@
+# CEM — Conseil Expertise Management
+
+> Cabinet d'expertise comptable et de commissariat aux comptes implanté à Agde (Hérault, Occitanie) et Paris 16e. CEM accompagne les dirigeants de TPE/PME : audit, expertise comptable, paie & gestion RH, stratégie fiscale et patrimoniale, accompagnement juridique. Cabinet à taille humaine fondé par Paul Marsault, expert-comptable.
+
+## Coordonnées
+
+- Cabinet d'Agde : 5 Avenue du Grand Large, 34300 Agde — Tél. 04 48 08 94 19
+- Cabinet de Paris : 62 avenue Henri Martin, 75016 Paris — Tél. 01 45 04 41 59
+- Email : cem@cem-expertcomptable.fr
+- Horaires : du lundi au vendredi, 9h00-13h00 et 14h00-18h00
+- Site : https://www.cem-expertcomptable.fr/
+
+## Missions
+
+- Audit & expertise comptable : tenue et révision des comptes, comptes annuels, liasse fiscale, commissariat aux comptes.
+- Paie & gestion RH : bulletins de paie, déclarations sociales, contrats, accompagnement social de l'employeur.
+- Stratégie fiscale et patrimoniale : optimisation fiscale, arbitrages de rémunération, holding, intégration fiscale, patrimoine du dirigeant.
+- Accompagnement juridique : secrétariat juridique annuel, création d'entreprise, choix de la forme sociale (SARL, SAS…).
+- [Comités Sociaux et Économiques (CSE)](https://www.cem-expertcomptable.fr/les-comites-sociaux-et-economiques-cse.html) : comptabilité du CSE, présentation des comptes, formation des élus — dispositif dédié depuis 2005, FAQ de 20 questions sur la page.
+
+## Outils gratuits en ligne
+
+- [Simulateur LMNP : micro-BIC ou régime réel ?](https://www.cem-expertcomptable.fr/outils/simulateur-lmnp.html) : comparateur fiscal pour la location meublée non professionnelle, calcul du revenu net après impôt et prélèvements sociaux.
+- [Diagnostic facturation électronique](https://www.cem-expertcomptable.fr/outils/diagnostic-facturation-electronique.html) : questionnaire personnalisé sur les obligations e-invoicing/e-reporting de la réforme (échéances 1er septembre 2026 et 2027) selon le profil : holding, SCI, LMNP, santé, pharmacie, agriculture, hôtellerie-restauration, association.
+
+## Blog « Le saviez-vous ? »
+
+Décryptages courts des actualités comptables, fiscales et sociales : [index des articles](https://www.cem-expertcomptable.fr/blog/). Sujets couverts : LMNP, facturation électronique, SMIC, PASS, CSG, frais de repas, CSE, holding, intégration fiscale, SARL/SAS, partage de la valeur, DAS2, plus-values immobilières, calendrier fiscal…
+
+## Zones d'intervention
+
+Agde, Cap d'Agde, Hérault (Béziers, Sète, Montpellier), Occitanie, Paris et Île-de-France — interventions dans toute la France.
+
+- [Expert-comptable à Agde](https://www.cem-expertcomptable.fr/expert-comptable-agde.html)
+- [Expert-comptable à Paris](https://www.cem-expertcomptable.fr/expert-comptable-paris.html)
+- [Expert-comptable à Béziers](https://www.cem-expertcomptable.fr/expert-comptable-beziers.html)
+- [Expert-comptable à Sète](https://www.cem-expertcomptable.fr/expert-comptable-sete.html)
+
+## Pages utiles
+
+- [Accueil](https://www.cem-expertcomptable.fr/)
+- [Contact](https://www.cem-expertcomptable.fr/#contact)
+- [Mentions légales](https://www.cem-expertcomptable.fr/mentions-legales.html)
+- [Politique de confidentialité](https://www.cem-expertcomptable.fr/politique-confidentialite.html)
+- [Plan du site (sitemap XML)](https://www.cem-expertcomptable.fr/sitemap.xml)
