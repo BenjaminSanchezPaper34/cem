@@ -93,8 +93,8 @@
       <a href="https://paper34.fr" target="_blank" rel="noopener" class="cem-foot-paper" title="Site réalisé par Paper34">Réalisé par <img src="/images/logoblanc-paper34.svg" alt="Paper34" width="64" height="12"></a>
     </div>
     <div class="cem-foot-contact">
-      <p>62 avenue Henri Martin, 75016 Paris — <a class="cem-foot-tel" href="tel:+33145044159">01 45 04 41 59</a></p>
       <p>5 Avenue du Grand Large, 34300 Agde — <a class="cem-foot-tel" href="tel:+33448089419">04 48 08 94 19</a></p>
+      <p>62 avenue Henri Martin, 75016 Paris — <a class="cem-foot-tel" href="tel:+33145044159">01 45 04 41 59</a></p>
       <p><a href="mailto:cem@cem-expertcomptable.fr">cem@cem-expertcomptable.fr</a></p>
     </div>
   </div>
@@ -118,12 +118,13 @@
   .cem-chat-frame{right:8px;left:8px;width:auto;bottom:88px}
 }
 </style>
-<iframe class="cem-chatbot" src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
+<iframe class="cem-chatbot" data-consent-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
 <button type="button" class="cem-chat-fab" aria-label="Ouvrir le chatbot CEM" onclick="var f=document.getElementById('cemChatFrame');var o=f.classList.toggle('open');this.querySelector('.ico-chat').style.display=o?'none':'block';this.querySelector('.ico-close').style.display=o?'block':'none';if(o&&!f.src)f.src=f.dataset.src;">
   <svg class="ico-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
   <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
 </button>
 <iframe id="cemChatFrame" class="cem-chat-frame" data-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Chatbot CEM" loading="lazy"></iframe>
+<script src="/scripts/consent.js" defer></script>
 </footer>
 </body>
 </html>

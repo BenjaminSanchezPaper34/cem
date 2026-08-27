@@ -104,4 +104,50 @@
       });
     }, { passive: true });
   }
+
+  // ============ HERO ACCUEIL (page reconstruite) ============
+  // Texte qui s'estompe + vidéo en parallaxe légère au scroll.
+  // Boucle rAF (lit scrollY à chaque frame) : robuste avec Lenis, coût nul quand rien ne bouge.
+  var accHero = document.querySelector('.acc-hero');
+  if (accHero) {
+    var accText = accHero.querySelector('.acc-hero-text');
+    var accVideo = accHero.querySelector('video');
+    var accLastY = -1;
+    (function accLoop(){
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (y !== accLastY) {
+        accLastY = y;
+        var h = accHero.offsetHeight || 800;
+        var yc = Math.min(y, h);
+        var p = yc / (h * 0.7);
+        if (accText) {
+          accText.style.opacity = String(Math.max(0, 1 - p * 1.15));
+          accText.style.transform = 'translate3d(0,' + (yc * 0.18) + 'px,0)';
+        }
+        if (accVideo) accVideo.style.transform = 'translate3d(0,' + (yc * 0.22) + 'px,0) scale(' + (1 + Math.min(p, 1) * 0.05) + ')';
+      }
+      requestAnimationFrame(accLoop);
+    })();
+  }
+
+  // ============ LENIS SMOOTH SCROLL (auto-hébergé) ============
+  var lenisScript = document.createElement('script');
+  lenisScript.src = '/scripts/lenis.min.js';
+  lenisScript.onload = function(){
+    if (!window.Lenis) return;
+    document.documentElement.style.scrollBehavior = 'auto'; // Lenis prend la main
+    var lenis = new window.Lenis({ duration: 1.05, smoothWheel: true });
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    // ancres internes : défilement fluide Lenis
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href^="#"], a[href^="/#"]');
+      if (!a) return;
+      var id = a.getAttribute('href').replace(/^\//, '');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -70 }); }
+    });
+  };
+  document.head.appendChild(lenisScript);
 })();

@@ -359,3 +359,48 @@ article.cem-article .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 
 .cem-js .sr { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--cem-ease), transform .7s var(--cem-ease); }
 .cem-js .sr.in { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) { .cem-js .sr { opacity:1; transform:none; transition:none; } }
+
+/* ===== Consentement services tiers (bloquant, CNIL) ===== */
+.cem-consent {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10020;
+  background: rgba(11,29,58,.98); color: #fff;
+  border: 1px solid rgba(255,255,255,.14); border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45);
+  padding: 18px 20px; max-width: 720px; margin: 0 auto;
+  display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+}
+.cem-consent p { margin: 0; font-size: .92rem; line-height: 1.5; color: rgba(255,255,255,.92); flex: 1 1 380px; }
+.cem-consent a { color: #8fb9e0; text-decoration: underline; }
+.cem-consent-btns { display: flex; gap: 10px; flex: 0 0 auto; }
+.cem-consent button {
+  font-family: inherit; font-size: .92rem; font-weight: 700; cursor: pointer;
+  border-radius: 999px; padding: 10px 18px; transition: transform .2s var(--cem-ease), background .2s;
+}
+.cem-consent-ok { background: #fff; color: var(--cem-navy); border: 0; }
+.cem-consent-ok:hover { background: #8fb9e0; transform: translateY(-1px); }
+.cem-consent-no { background: none; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.35); }
+.cem-consent-no:hover { color: #fff; border-color: #fff; }
+
+/* Emplacements de widgets avant consentement */
+.tiers { position: relative; }
+.tiers-ph {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; text-align: center; padding: 28px;
+  background: #f4f6fb; border-radius: inherit;
+}
+.tiers-ph p { margin: 0; color: #4a5568; font-size: .98rem; line-height: 1.55; max-width: 46ch; }
+.tiers-ph strong { color: #1d1d1f; }
+.tiers-allow {
+  font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer;
+  background: #25519B; color: #fff; border: 0; border-radius: 999px; padding: 11px 22px;
+  transition: transform .2s var(--cem-ease), background .2s;
+}
+.tiers-allow:hover { background: #0b1d3a; transform: translateY(-1px); }
+.tiers-ok .tiers-ph { display: none; }
+/* Chatbot : masqué tant que non consenti */
+html:not(.tiers-ok) .cem-chatbot, html:not(.tiers-ok) .cem-chat-fab { display: none !important; }
+
+/* ===== Signature Paper34 (kit officiel — version statique sobre) ===== */
+.cem-foot-paper { opacity: .72; transition: opacity .25s var(--cem-ease); }
+.cem-foot-paper:hover { opacity: 1; }

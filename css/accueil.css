@@ -162,3 +162,27 @@
   .acc-horaires { padding: 28px 20px; }
   .acc-form { min-height: 700px; }
 }
+
+/* Flèche d'invitation au scroll (hero) */
+.acc-scroll {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 2;
+  width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.75); border-radius: 14px;
+  pointer-events: none;
+}
+.acc-scroll::after {
+  content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px;
+  margin-left: -2px; border-radius: 2px; background: #fff;
+  animation: acc-scroll-dot 1.8s ease-in-out infinite;
+}
+@keyframes acc-scroll-dot { 0%{opacity:0;transform:translateY(0)} 30%{opacity:1} 70%{opacity:1;transform:translateY(14px)} 100%{opacity:0;transform:translateY(16px)} }
+@media (prefers-reduced-motion: reduce) { .acc-scroll::after { animation: none; } }
+
+/* Fond doux des cartes widgets pendant le chargement */
+.acc-carte-carte, .acc-insta { background: #f4f6fb; }
+.acc-form { background: transparent; }
+
+/* Avis : plus d'air sur mobile (le texte s'enroule) */
+@media (max-width: 640px) { .acc-avis iframe { height: 500px; } }
+
+/* Hero : classes animées au scroll (pilotées par premium.js, GPU only) */
+.acc-hero .acc-hero-text, .acc-hero video { will-change: transform, opacity; }
