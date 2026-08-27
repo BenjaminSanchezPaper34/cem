@@ -342,3 +342,9 @@ a[href^="mailto"]:hover { background-size: 100% 1px; }
     opacity: 1 !important;
   }
 }
+
+/* Footer Muse (accueil + CSE) : les lignes d'adresse+téléphone repliaient dans
+   leurs champs fixes de 460px (numéros coupés), aggravé par l'adresse d'Agde
+   rallongée. On les rend insécables ; alignées à droite, elles s'étendent
+   proprement vers la gauche dans la bande bleue. */
+#u137-5, #u137-5 p, #u1012-5, #u1012-5 p { white-space: nowrap !important; }
