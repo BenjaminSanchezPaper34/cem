@@ -1,0 +1,164 @@
+/* ============================================================
+   Accueil CEM — reconstruction fidèle du design Muse en responsive
+   Identité conservée : blanc, cartes bleues #25519B, cartes blanches
+   ombrées, SF Pro, photos Agde/Paris en bandeaux pleine largeur.
+   ============================================================ */
+:root {
+  --acc-bleu: #25519B;
+  --acc-encre: #1D1D1F;
+  --acc-gris: #7F7F7F;
+  --acc-gris2: #96979A;
+  --acc-ombre: 4px 4px 20px rgba(0,0,0,.1);
+  --acc-r: 20px;
+}
+.acc-wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- HERO vidéo ---------- */
+.acc-hero { position: relative; min-height: 100svh; overflow: hidden; background: #1D1D1F; }
+.acc-hero video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.acc-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(29,29,31,.30) 0%, rgba(29,29,31,0) 35%, rgba(29,29,31,0) 55%, rgba(29,29,31,.62) 100%);
+}
+.acc-hero .acc-hero-text {
+  position: absolute; left: 0; right: 0; bottom: clamp(48px, 9vh, 96px); z-index: 2;
+}
+.acc-hero h1 {
+  margin: 0 0 14px; color: #fff; font-weight: 600;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.3; letter-spacing: -.01em;
+  max-width: 21ch;
+}
+.acc-hero .acc-services { margin: 0; padding: 0; list-style: none; }
+.acc-hero .acc-services li { color: #fff; font-size: clamp(.98rem, 1.35vw, 1.19rem); line-height: 1.55; font-weight: 400; }
+
+/* ---------- Sections génériques ---------- */
+.acc-section { padding: clamp(56px, 8vw, 100px) 0; background: #fff; position: relative; }
+.acc-h2 {
+  margin: 0 0 34px; color: var(--acc-encre); font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem); line-height: 1.3;
+}
+
+/* ---------- Carte horaires ---------- */
+.acc-horaires {
+  background: #fff; border-radius: var(--acc-r); box-shadow: var(--acc-ombre);
+  padding: 40px; text-align: center;
+  font-size: clamp(1.02rem, 1.4vw, 1.19rem); line-height: 1.35; color: var(--acc-gris);
+}
+.acc-horaires strong { color: var(--acc-encre); font-weight: 500; }
+
+/* ---------- Le mot du fondateur (carte bleue + photo ronde) ---------- */
+.acc-fondateur { position: relative; margin-top: 96px; }
+.acc-fondateur .acc-carte {
+  background: var(--acc-bleu); border-radius: var(--acc-r); box-shadow: var(--acc-ombre);
+  padding: clamp(24px, 4vw, 40px);
+  padding-top: 96px;
+  color: #fff;
+}
+.acc-fondateur .acc-photo {
+  position: absolute; top: -70px; left: clamp(16px, 5vw, 47px);
+  width: 168px; height: 168px; border-radius: 50%;
+  border: 6px solid #fff; object-fit: cover;
+  box-shadow: var(--acc-ombre);
+}
+.acc-fondateur .acc-nom {
+  position: absolute; top: 0; left: clamp(200px, 28vw, 273px);
+  transform: translateY(-50%);
+  background: var(--acc-bleu); border: 1px solid #fff; border-radius: 6px;
+  color: #fff; font-weight: 700; font-size: 1.19rem;
+  padding: 8px 26px; line-height: 1.4; white-space: nowrap;
+}
+.acc-fondateur .acc-citation {
+  margin: 0 0 18px; font-size: 1.19rem; line-height: 1.35;
+  text-shadow: 4px 4px 20px rgba(0,0,0,.1);
+}
+.acc-fondateur p { font-size: 1.19rem; line-height: 1.32; text-align: justify; margin: 0 0 18px; font-weight: 400; }
+.acc-fondateur p:last-child { margin-bottom: 0; }
+.acc-fondateur strong { font-weight: 600; }
+
+/* ---------- Cabinet ---------- */
+.acc-cabinet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 40px); align-items: start; }
+.acc-cabinet-texte p { color: var(--acc-gris2); font-size: 1.19rem; line-height: 1.32; text-align: justify; margin: 0 0 20px; }
+.acc-cabinet-texte p strong, .acc-cabinet-texte .fonce { color: var(--acc-encre); font-weight: 400; }
+.acc-cabinet-texte ul { list-style: none; margin: 0; padding: 0; }
+.acc-cabinet-texte li { color: var(--acc-encre); font-size: 1.19rem; line-height: 1.6; }
+.acc-cabinet-droite .acc-lead { color: var(--acc-gris2); font-size: 1.19rem; line-height: 1.32; text-align: justify; margin: 0 0 24px; }
+.acc-carte-carte {
+  background: #fff; border-radius: var(--acc-r); box-shadow: var(--acc-ombre);
+  overflow: hidden; min-height: 420px; position: relative;
+}
+.acc-carte-carte iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Missions ---------- */
+.acc-missions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px); position: relative; z-index: 2; }
+.acc-missions-grid .acc-col-droite { margin-top: 72px; }
+.acc-mission {
+  background: #fff; border-radius: var(--acc-r); box-shadow: var(--acc-ombre);
+  padding: clamp(26px, 4vw, 40px); margin-bottom: clamp(24px, 4vw, 40px);
+}
+.acc-mission:last-child { margin-bottom: 0; }
+.acc-mission .acc-mtitre {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 18px;
+  color: var(--acc-bleu); font-weight: 700; font-size: 1.25rem;
+}
+.acc-mission .acc-mtitre img { width: 22px; height: 22px; flex: 0 0 auto; }
+.acc-mission p { color: var(--acc-gris); font-size: 1.19rem; line-height: 1.32; text-align: justify; font-weight: 300; margin: 0 0 16px; }
+.acc-mission p.acc-mission-but { color: var(--acc-encre); margin-bottom: 0; }
+
+/* Bandeau photo Agde derrière le bas des missions */
+.acc-agde {
+  margin-top: -300px; padding-top: 360px; padding-bottom: 80px;
+  background: url('/images/photo-agde-cem.webp') center center / cover no-repeat;
+  position: relative; z-index: 1;
+}
+.acc-agde::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 65%;
+  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+#services { scroll-margin-top: 90px; }
+#cabinet, #contact { scroll-margin-top: 70px; }
+
+/* ---------- Avis ---------- */
+.acc-avis { text-align: center; }
+.acc-avis iframe { width: 100%; height: 360px; border: 0; display: block; }
+
+/* ---------- Contact ---------- */
+.acc-contact { position: relative; overflow: hidden; padding-bottom: 0; }
+.acc-contact .acc-paris {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 62%;
+  background: url('/images/paris-cem.webp') center bottom / cover no-repeat;
+}
+.acc-contact .acc-paris::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, #fff 12%, rgba(255,255,255,0) 60%);
+}
+.acc-contact .acc-wrap { position: relative; z-index: 2; padding-bottom: clamp(56px, 8vw, 100px); }
+.acc-contact-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px, 4vw, 44px); align-items: start; }
+.acc-form { min-height: 640px; position: relative; }
+.acc-form iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.acc-insta {
+  background: #fff; border-radius: var(--acc-r); box-shadow: var(--acc-ombre);
+  overflow: hidden; min-height: 620px; position: relative;
+}
+.acc-insta iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .acc-cabinet-grid, .acc-contact-grid { grid-template-columns: 1fr; }
+  .acc-missions-grid { grid-template-columns: 1fr; }
+  .acc-missions-grid .acc-col-droite { margin-top: 0; }
+  .acc-mission { margin-bottom: 24px; }
+  .acc-missions-grid .acc-col-droite .acc-mission:last-child { margin-bottom: 0; }
+  .acc-agde { margin-top: -160px; padding-top: 220px; }
+}
+@media (max-width: 640px) {
+  .acc-fondateur .acc-photo { width: 128px; height: 128px; top: -56px; }
+  .acc-fondateur .acc-nom { left: 170px; font-size: 1.02rem; padding: 7px 18px; }
+  .acc-fondateur .acc-carte { padding-top: 88px; }
+  .acc-fondateur p, .acc-cabinet-texte p, .acc-cabinet-droite .acc-lead, .acc-mission p, .acc-cabinet-texte li { font-size: 1.02rem; text-align: left; }
+  .acc-horaires { padding: 28px 20px; }
+  .acc-form { min-height: 700px; }
+}
