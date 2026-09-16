@@ -61,7 +61,7 @@
         <li>Contacts prospects sans suite : <strong>3 ans</strong> après le dernier échange ;</li>
         <li>Clients actifs : durée de la relation contractuelle + <strong>10 ans</strong> pour les obligations légales ;</li>
         <li>Données du chatbot : <strong>13 mois</strong> maximum ;</li>
-        <li>Cookies de mesure d'audience : <strong>13 mois</strong>.</li>
+        <li>Préférences de confidentialité (services désactivés) : conservées dans votre navigateur jusqu’à effacement.</li>
       </ul>
 
       <h2>Destinataires</h2>
@@ -72,13 +72,10 @@
       <p>Pour exercer ces droits, contactez-nous à <a href="mailto:cem@cem-expertcomptable.fr">cem@cem-expertcomptable.fr</a> en joignant un justificatif d'identité.</p>
       <p>En cas de difficulté, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a> — 3 place de Fontenoy, 75007 Paris.</p>
 
-      <h2>Cookies</h2>
-      <p>Ce site utilise uniquement des <strong>cookies strictement nécessaires</strong> au fonctionnement (préférences d'affichage) et, avec votre consentement, des cookies tiers déposés par les widgets intégrés :</p>
-      <ul>
-        <li><strong>Elfsight</strong> — carte, avis clients, feed Instagram, formulaire, chatbot ;</li>
-        <li><strong>Google Fonts</strong> — chargement des polices.</li>
-      </ul>
-      <p>Vous pouvez à tout moment désactiver les cookies dans les paramètres de votre navigateur.</p>
+      <h2>Cookies et services tiers</h2>
+      <p>Ce site n’utilise aucun cookie de mesure d’audience ni de publicité. La fréquentation est mesurée par <strong>Vercel Web Analytics</strong>, une solution sans cookie ni identifiant personnel, exemptée de consentement.</p>
+      <p>Certains contenus sont fournis par des services externes qui peuvent déposer leurs propres cookies : la <strong>carte des cabinets</strong>, les <strong>avis clients Google</strong>, le <strong>formulaire de contact</strong>, le <strong>fil Instagram</strong> et le <strong>chatbot</strong> (éditeur Elfsight). Ces services s’affichent par défaut. Vous pouvez désactiver chacun d’eux à tout moment depuis le lien <a href="#preferences">« Préférences de confidentialité »</a> en bas de chaque page ; votre choix est mémorisé dans votre navigateur et un encadré conserve l’information utile (adresses, coordonnées) à la place du service coupé.</p>
+      <p>Les polices du site sont auto-hébergées : aucune requête n’est envoyée à un service de polices tiers.</p>
 
       <h2>Sécurité</h2>
       <p>Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données : hébergement HTTPS, HSTS, headers de sécurité (X-Frame-Options, Referrer-Policy, Permissions-Policy), restriction d'accès, formation des collaborateurs au secret professionnel de l'expert-comptable.</p>
@@ -116,7 +113,7 @@
   </div>
   <div class="cem-foot-bar">
     <div class="wrap">
-      <nav aria-label="Liens utiles"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><a href="/blog/">Blog</a><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Politique de confidentialité</a></nav>
+      <nav aria-label="Liens utiles"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><a href="/blog/">Blog</a><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Politique de confidentialité</a><a href="#preferences" class="cem-prefs-link">Préférences de confidentialité</a></nav>
       <span>CEM © 2026 — Tous droits réservés</span>
     </div>
   </div>
@@ -134,13 +131,16 @@
   .cem-chat-frame{right:8px;left:8px;width:auto;bottom:88px}
 }
 </style>
-<iframe class="cem-chatbot" data-consent-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
+<iframe class="cem-chatbot" data-service="chatbot" data-consent-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
 <button type="button" class="cem-chat-fab" aria-label="Ouvrir le chatbot CEM" onclick="var f=document.getElementById('cemChatFrame');var o=f.classList.toggle('open');this.querySelector('.ico-chat').style.display=o?'none':'block';this.querySelector('.ico-close').style.display=o?'block':'none';if(o&&!f.src)f.src=f.dataset.src;">
   <svg class="ico-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
   <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
 </button>
 <iframe id="cemChatFrame" class="cem-chat-frame" data-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Chatbot CEM" loading="lazy"></iframe>
 <script src="/scripts/consent.js" defer></script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/scripts/analytics-events.js" defer></script>
 </footer>
 </body>
 </html>

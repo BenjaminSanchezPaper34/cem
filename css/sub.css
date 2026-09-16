@@ -360,46 +360,29 @@ article.cem-article .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 
 .cem-js .sr.in { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) { .cem-js .sr { opacity:1; transform:none; transition:none; } }
 
-/* ===== Consentement services tiers (bloquant, CNIL) ===== */
-.cem-consent {
-  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10020;
-  background: rgba(11,29,58,.98); color: #fff;
-  border: 1px solid rgba(255,255,255,.14); border-radius: 14px;
-  box-shadow: 0 24px 60px rgba(0,0,0,.45);
-  padding: 18px 20px; max-width: 720px; margin: 0 auto;
-  display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
-}
-.cem-consent p { margin: 0; font-size: .92rem; line-height: 1.5; color: rgba(255,255,255,.92); flex: 1 1 380px; }
-.cem-consent a { color: #8fb9e0; text-decoration: underline; }
-.cem-consent-btns { display: flex; gap: 10px; flex: 0 0 auto; }
-.cem-consent button {
-  font-family: inherit; font-size: .92rem; font-weight: 700; cursor: pointer;
-  border-radius: 999px; padding: 10px 18px; transition: transform .2s var(--cem-ease), background .2s;
-}
-.cem-consent-ok { background: #fff; color: var(--cem-navy); border: 0; }
-.cem-consent-ok:hover { background: #8fb9e0; transform: translateY(-1px); }
-.cem-consent-no { background: none; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.35); }
-.cem-consent-no:hover { color: #fff; border-color: #fff; }
-
-/* Emplacements de widgets avant consentement */
+/* ===== Services tiers — modèle opt-out (panneau Préférences, jamais de bandeau) ===== */
 .tiers { position: relative; }
-.tiers-ph {
-  position: absolute; inset: 0; z-index: 3;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 12px; text-align: center; padding: 28px;
-  background: #f4f6fb; border-radius: inherit;
-}
+.tiers-ph { position: absolute; inset: 0; z-index: 3; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 28px; background: #f4f6fb; border-radius: inherit; }
+.tiers.off .tiers-ph { display: flex; }
 .tiers-ph p { margin: 0; color: #4a5568; font-size: .98rem; line-height: 1.55; max-width: 46ch; }
 .tiers-ph strong { color: #1d1d1f; }
-.tiers-allow {
-  font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer;
-  background: #25519B; color: #fff; border: 0; border-radius: 999px; padding: 11px 22px;
-  transition: transform .2s var(--cem-ease), background .2s;
-}
+.tiers-allow { font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; background: #25519B; color: #fff; border: 0; border-radius: 999px; padding: 11px 22px; transition: transform .2s var(--cem-ease), background .2s; }
 .tiers-allow:hover { background: #0b1d3a; transform: translateY(-1px); }
-.tiers-ok .tiers-ph { display: none; }
-/* Chatbot : masqué tant que non consenti */
-html:not(.tiers-ok) .cem-chatbot, html:not(.tiers-ok) .cem-chat-fab { display: none !important; }
+html.off-chatbot .cem-chatbot, html.off-chatbot .cem-chat-fab { display: none !important; }
+.cem-prefs { position: fixed; right: 20px; bottom: 20px; z-index: 10030; display: none; width: min(23rem, calc(100vw - 40px)); padding: 20px 22px; background: rgba(11,29,58,.98); color: #fff; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+.cem-prefs.open { display: block; }
+.cem-prefs-titre { margin: 0 0 6px; font-weight: 700; font-size: 1.02rem; }
+.cem-prefs-txt { margin: 0 0 14px; font-size: .9rem; line-height: 1.5; color: rgba(255,255,255,.75); }
+.cem-prefs-txt a { color: #8fb9e0; text-decoration: underline; }
+.cem-prefs ul { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 10px; }
+.cem-prefs li { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .92rem; }
+.cem-prefs button[role="switch"] { flex: 0 0 auto; position: relative; width: 44px; height: 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,.3); background: transparent; cursor: pointer; padding: 0; transition: background .25s; }
+.cem-prefs button[role="switch"] span { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: rgba(255,255,255,.5); transition: transform .25s var(--cem-ease), background .25s; }
+.cem-prefs button[role="switch"][aria-checked="true"] { background: #fff; }
+.cem-prefs button[role="switch"][aria-checked="true"] span { transform: translateX(20px); background: #0b1d3a; }
+.cem-prefs-btns { display: flex; justify-content: flex-end; }
+.cem-prefs-close { font-family: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; background: none; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 8px 16px; }
+.cem-prefs-close:hover { color: #fff; border-color: #fff; }
 
 /* ===== Signature Paper34 (kit officiel — version statique sobre) ===== */
 .cem-foot-paper { opacity: .72; transition: opacity .25s var(--cem-ease); }

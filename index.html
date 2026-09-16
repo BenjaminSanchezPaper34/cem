@@ -171,7 +171,7 @@
         <div class="acc-cabinet-droite sr">
           <p class="acc-lead">La proximité, l'écoute et la réactivité de notre équipe sont au cœur de notre engagement pour vous aider à piloter votre activité en toute confiance.</p>
           <div class="acc-carte-carte tiers">
-            <iframe data-consent-src="https://112fc53ff6374f76a96935351faeadf9.elf.site" loading="lazy" title="Carte des cabinets CEM - Agde &amp; Paris"></iframe><div class="tiers-ph"><p><strong>Carte interactive des cabinets</strong> (service tiers Elfsight / Google Maps).<br>Agde : 5 Avenue du Grand Large, 34300 Agde<br>Paris : 62 avenue Henri Martin, 75016 Paris</p><button type="button" class="tiers-allow">Autoriser et afficher</button></div>
+            <iframe data-service="carte" data-consent-src="https://112fc53ff6374f76a96935351faeadf9.elf.site" loading="lazy" title="Carte des cabinets CEM - Agde &amp; Paris"></iframe><div class="tiers-ph"><p><strong>Carte interactive des cabinets</strong> (service tiers Elfsight / Google Maps).<br>Agde : 5 Avenue du Grand Large, 34300 Agde<br>Paris : 62 avenue Henri Martin, 75016 Paris</p><button type="button" class="tiers-allow">Réactiver ce service</button></div>
           </div>
         </div>
       </div>
@@ -225,7 +225,7 @@
   <section class="acc-section acc-avis">
     <div class="acc-wrap">
       <div class="tiers" style="border-radius:20px">
-      <iframe data-consent-src="https://1e26346b6e284223a0727eb2790250b4.elf.site" loading="lazy" title="Avis clients CEM"></iframe><div class="tiers-ph"><p><strong>Nos avis clients Google</strong> s’affichent ici avec votre accord (service tiers Elfsight).</p><button type="button" class="tiers-allow">Autoriser et afficher</button></div>
+      <iframe data-service="avis" data-consent-src="https://1e26346b6e284223a0727eb2790250b4.elf.site" loading="lazy" title="Avis clients CEM"></iframe><div class="tiers-ph"><p><strong>Nos avis clients Google</strong> s’affichent ici avec votre accord (service tiers Elfsight).</p><button type="button" class="tiers-allow">Réactiver ce service</button></div>
       </div>
     </div>
   </section>
@@ -237,10 +237,10 @@
       <h2 class="acc-h2 sr">Contact</h2>
       <div class="acc-contact-grid">
         <div class="acc-form sr tiers">
-          <iframe data-consent-src="https://2c8656280fd748e99b3c653e4972ef83.elf.site" loading="lazy" title="Formulaire de contact CEM"></iframe><div class="tiers-ph"><p><strong>Formulaire de contact</strong> (service tiers Elfsight).<br>Sans le formulaire, vous pouvez nous écrire à <a href="mailto:cem@cem-expertcomptable.fr">cem@cem-expertcomptable.fr</a><br>ou appeler le 04 48 08 94 19 (Agde) / 01 45 04 41 59 (Paris).</p><button type="button" class="tiers-allow">Autoriser et afficher</button></div>
+          <iframe data-service="formulaire" data-consent-src="https://2c8656280fd748e99b3c653e4972ef83.elf.site" loading="lazy" title="Formulaire de contact CEM"></iframe><div class="tiers-ph"><p><strong>Formulaire de contact</strong> (service tiers Elfsight).<br>Sans le formulaire, vous pouvez nous écrire à <a href="mailto:cem@cem-expertcomptable.fr">cem@cem-expertcomptable.fr</a><br>ou appeler le 04 48 08 94 19 (Agde) / 01 45 04 41 59 (Paris).</p><button type="button" class="tiers-allow">Réactiver ce service</button></div>
         </div>
         <div class="acc-insta sr tiers">
-          <iframe data-consent-src="https://c89c32779b32486593baa200a211f991.elf.site" loading="lazy" title="Feed Instagram CEM"></iframe><div class="tiers-ph"><p><strong>Notre fil Instagram</strong> s’affiche ici avec votre accord (service tiers Elfsight).</p><button type="button" class="tiers-allow">Autoriser et afficher</button></div>
+          <iframe data-service="instagram" data-consent-src="https://c89c32779b32486593baa200a211f991.elf.site" loading="lazy" title="Feed Instagram CEM"></iframe><div class="tiers-ph"><p><strong>Notre fil Instagram</strong> s’affiche ici avec votre accord (service tiers Elfsight).</p><button type="button" class="tiers-allow">Réactiver ce service</button></div>
         </div>
       </div>
     </div>
@@ -266,7 +266,7 @@
   </div>
   <div class="cem-foot-bar">
     <div class="wrap">
-      <nav aria-label="Liens utiles"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><a href="/blog/">Blog</a><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Politique de confidentialité</a></nav>
+      <nav aria-label="Liens utiles"><a href="/outils/simulateur-lmnp.html">Simulateur LMNP</a><a href="/blog/">Blog</a><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Politique de confidentialité</a><a href="#preferences" class="cem-prefs-link">Préférences de confidentialité</a></nav>
       <span>CEM © 2026 — Tous droits réservés</span>
     </div>
   </div>
@@ -284,13 +284,16 @@
   .cem-chat-frame{right:8px;left:8px;width:auto;bottom:88px}
 }
 </style>
-<iframe class="cem-chatbot" data-consent-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
+<iframe class="cem-chatbot" data-service="chatbot" data-consent-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Assistant IA CEM" loading="lazy"></iframe>
 <button type="button" class="cem-chat-fab" aria-label="Ouvrir le chatbot CEM" onclick="var f=document.getElementById('cemChatFrame');var o=f.classList.toggle('open');this.querySelector('.ico-chat').style.display=o?'none':'block';this.querySelector('.ico-close').style.display=o?'block':'none';if(o&&!f.src)f.src=f.dataset.src;">
   <svg class="ico-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
   <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
 </button>
 <iframe id="cemChatFrame" class="cem-chat-frame" data-src="https://36ae34fa99b74eafa5b50a1a0e152951.elf.site" title="Chatbot CEM" loading="lazy"></iframe>
 <script src="/scripts/consent.js" defer></script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/scripts/analytics-events.js" defer></script>
 </footer>
 </body>
 </html>
