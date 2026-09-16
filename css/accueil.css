@@ -203,3 +203,18 @@
 @keyframes acc-recrute-ping { 0%{box-shadow:0 0 0 0 rgba(143,185,224,.7)} 70%{box-shadow:0 0 0 9px rgba(143,185,224,0)} 100%{box-shadow:0 0 0 0 rgba(143,185,224,0)} }
 @media (prefers-reduced-motion: reduce) { .acc-recrute-dot { animation: none; } }
 @media (max-width: 640px) { .acc-recrute { font-size: .88rem; padding: 9px 14px 9px 12px; } }
+
+/* Bannière recrutement sous le hero (bleu CEM, texte blanc) */
+.acc-bandeau-recrute { display: block; background: var(--acc-bleu); color: #fff; text-decoration: none; transition: background .25s var(--cem-ease); }
+.acc-bandeau-recrute:hover { background: #1f4686; color: #fff; }
+.acc-bandeau-inner { display: flex; align-items: center; gap: 22px; padding-top: 18px; padding-bottom: 18px; }
+.acc-bandeau-kicker { display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto; font-weight: 700; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; }
+.acc-bandeau-txt { flex: 1 1 auto; font-size: 1.02rem; line-height: 1.4; }
+.acc-bandeau-txt strong { font-weight: 700; }
+.acc-bandeau-btn { flex: 0 0 auto; background: #fff; color: var(--acc-bleu); font-weight: 700; font-size: .95rem; padding: 10px 18px; border-radius: 999px; white-space: nowrap; transition: transform .25s var(--cem-ease); }
+.acc-bandeau-recrute:hover .acc-bandeau-btn { transform: translateX(3px); }
+@media (max-width: 760px) {
+  .acc-bandeau-inner { flex-wrap: wrap; gap: 10px 16px; }
+  .acc-bandeau-txt { flex-basis: 100%; font-size: .96rem; }
+  .acc-bandeau-btn { width: 100%; text-align: center; }
+}
