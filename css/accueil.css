@@ -218,3 +218,11 @@
   .acc-bandeau-txt { flex-basis: 100%; font-size: .96rem; }
   .acc-bandeau-btn { width: 100%; text-align: center; }
 }
+
+/* Bannière recrutement EN TÊTE de page (au-dessus du header) + croix de fermeture */
+.acc-bandeau-recrute { position: relative; z-index: 120; }
+.acc-bandeau-recrute .acc-bandeau-inner { color: #fff; text-decoration: none; padding-right: 56px; }
+.acc-bandeau-close { position: absolute; top: 50%; right: 14px; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.45); background: transparent; color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; transition: background .2s, border-color .2s; }
+.acc-bandeau-close:hover { background: rgba(255,255,255,.18); border-color: #fff; }
+.cem-nav { top: var(--cem-topbar, 0px); }
+@media (max-width: 760px) { .acc-bandeau-close { top: 14px; transform: none; width: 32px; height: 32px; right: 10px; } .acc-bandeau-recrute .acc-bandeau-inner { padding-right: 20px; } .acc-bandeau-kicker { padding-right: 40px; } }
