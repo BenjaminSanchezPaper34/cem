@@ -387,3 +387,9 @@ html.off-chatbot .cem-chatbot, html.off-chatbot .cem-chat-fab { display: none !i
 /* ===== Signature Paper34 (kit officiel — version statique sobre) ===== */
 .cem-foot-paper { opacity: .72; transition: opacity .25s var(--cem-ease); }
 .cem-foot-paper:hover { opacity: 1; }
+
+/* Carte Recrutement : bleu CEM, texte blanc — mise en avant sur /blog/ */
+.cem-card.cem-card-recrut { background: #25519B; border-color: #25519B; }
+.cem-card.cem-card-recrut .tag { color: #8fb9e0; }
+.cem-card.cem-card-recrut h3, .cem-card.cem-card-recrut p, .cem-card.cem-card-recrut .arrow { color: #fff; }
+.cem-card.cem-card-recrut:hover { background: #0b1d3a; border-color: #0b1d3a; }
