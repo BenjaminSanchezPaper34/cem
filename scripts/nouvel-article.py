@@ -35,6 +35,9 @@ Mise en forme du contenu (mini-markdown) :
   **texte**         → gras
   > texte           → encadré "Le saviez-vous" (cem-fact)
 
+Encadré « L'essentiel » (GEO, obligatoire) : --essentiel "puce 1 | puce 2 | puce 3"
+  → la réponse à la question du titre en 3 puces, chiffres et références inclus.
+
 Après génération : git add -A && git commit && git push (déploiement auto).
 """
 import argparse, datetime, html, os, re, subprocess, sys, unicodedata
@@ -100,7 +103,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="{site}/images/logo-blanc-cem.svg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"{titre_json}","description":"{desc_json}","datePublished":"{date}","author":{{"@type":"Organization","name":"CEM Expert-comptable","url":"{site}/"}},"publisher":{{"@type":"Organization","name":"CEM","logo":{{"@type":"ImageObject","url":"{site}/images/logo-blanc-cem.svg"}}}},"mainEntityOfPage":"{url}","inLanguage":"fr-FR","articleSection":"{cat_json}"}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"{titre_json}","description":"{desc_json}","datePublished":"{date}","dateModified":"{date}","author":{{"@type":"Organization","name":"CEM Expert-comptable","url":"{site}/"}},"publisher":{{"@type":"Organization","name":"CEM","logo":{{"@type":"ImageObject","url":"{site}/images/logo-blanc-cem.svg"}}}},"mainEntityOfPage":"{url}","inLanguage":"fr-FR","articleSection":"{cat_json}"}}</script>
 </head>
 <body>
 <a href="#main" class="skip-link">Aller au contenu</a>
@@ -117,7 +120,7 @@ TEMPLATE = '''<!DOCTYPE html>
   <section class="cem-content">
     <article class="cem-article"><div class="wrap-narrow">
     <div class="meta"><span class="tag">{cat_esc}</span><time datetime="{date}">{date}</time></div>
-
+{essentiel}
       {corps}
 
       <h2>Besoin d'un conseil personnalisé ?</h2>
@@ -140,6 +143,7 @@ def main():
     ap.add_argument('--lead', default=None, help='Phrase d\'accroche du hero (défaut: la description)')
     ap.add_argument('--slug', default=None)
     ap.add_argument('--date', default=None, help='AAAA-MM-JJ (défaut: aujourd\'hui)')
+    ap.add_argument('--essentiel', required=True, help='3 puces séparées par " | " : la réponse à la question du titre')
     ap.add_argument('contenu', nargs='?', default=None, help='Fichier texte du contenu (sinon: stdin)')
     a = ap.parse_args()
 
@@ -154,13 +158,20 @@ def main():
     src = open(a.contenu, encoding='utf-8').read() if a.contenu else sys.stdin.read()
     if not src.strip():
         sys.exit('ERREUR: contenu vide.')
+    puces = [p.strip() for p in a.essentiel.split('|') if p.strip()]
+    if len(puces) != 3:
+        sys.exit('ERREUR: --essentiel attend exactement 3 puces séparées par " | ".')
+    essentiel = ('\n    <aside class="cem-essentiel" aria-label="L\'essentiel de l\'article">\n'
+                 '      <p class="label">L\'essentiel</p>\n      <ul>\n' +
+                 ''.join('        <li>%s</li>\n' % html.escape(p, quote=False) for p in puces) +
+                 '      </ul>\n    </aside>\n')
 
     j = lambda t: t.replace('\\', '\\\\').replace('"', '\\"')
     page = TEMPLATE.format(
         titre_esc=html.escape(a.titre, quote=False), desc_esc=html.escape(a.description, quote=True),
         lead_esc=html.escape(lead, quote=False), cat_esc=html.escape(a.categorie, quote=False),
         titre_json=j(a.titre), desc_json=j(a.description), cat_json=j(a.categorie),
-        date=date, url=url, site=SITE, corps=md_to_html(src),
+        date=date, url=url, site=SITE, corps=md_to_html(src), essentiel=essentiel,
     ).replace('<link rel="canonical" content-type="text/html" href=', '<link rel="canonical" href=')
     open(path, 'w', encoding='utf-8').write(page)
     print('✓ %s créé' % path)

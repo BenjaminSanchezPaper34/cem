@@ -270,6 +270,20 @@ a:hover { color: var(--cem-navy); }
   margin-bottom: 6px;
 }
 
+/* « L'essentiel » — réponse à la question du titre en 3 puces (GEO : passage cité par les IA) */
+.cem-essentiel {
+  background: var(--cem-bg-2); border: 1px solid rgba(37,81,155,.18); border-left: 4px solid var(--cem-blue);
+  padding: 22px 26px; border-radius: 8px; margin: 8px 0 32px;
+}
+.cem-essentiel .label {
+  font-size: .8rem; font-weight: 700; color: var(--cem-blue);
+  text-transform: uppercase; letter-spacing: .12em;
+  margin: 0 0 10px;
+}
+.cem-essentiel ul { margin: 0; padding-left: 20px; }
+.cem-essentiel li { margin: 6px 0; line-height: 1.55; }
+.cem-essentiel li::marker { color: var(--cem-blue); }
+
 /* CTA banner */
 .cem-cta {
   background: var(--cem-navy); color: #fff;
@@ -384,9 +398,12 @@ html.off-chatbot .cem-chatbot, html.off-chatbot .cem-chat-fab { display: none !i
 .cem-prefs-close { font-family: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; background: none; color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 8px 16px; }
 .cem-prefs-close:hover { color: #fff; border-color: #fff; }
 
-/* ===== Signature Paper34 (kit officiel — version statique sobre) ===== */
-.cem-foot-paper { opacity: .72; transition: opacity .25s var(--cem-ease); }
+/* ===== Signature Paper34 (kit officiel) : « Réalisé par » sobre au repos, onde de fumée
+   fluide WebGL aux bleus Paper34 au survol du logo (scripts/paper-signature.js) ===== */
+.cem-foot { position: relative; }
+.cem-foot-paper { opacity: .72; transition: opacity .25s var(--cem-ease); position: relative; z-index: 6; }
 .cem-foot-paper:hover { opacity: 1; }
+.paper-smoke { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 5; }
 
 /* Carte Recrutement : bleu CEM, texte blanc — mise en avant sur /blog/ */
 .cem-card.cem-card-recrut { background: #25519B; border-color: #25519B; }
