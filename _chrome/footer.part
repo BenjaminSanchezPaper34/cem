@@ -45,4 +45,5 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="/scripts/analytics-events.js" defer></script>
 <script src="/scripts/paper-signature.js" defer></script>
+<script src="/scripts/concours-popup.js" defer></script>
 </footer>
