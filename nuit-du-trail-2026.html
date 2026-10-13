@@ -48,6 +48,7 @@
       <span class="eyebrow">Jeu concours · CEM partenaire premium</span>
       <h1>Jeu concours : 5 dossards à gagner pour La Nuit du Trail</h1>
       <p class="lead">Samedi 31 octobre 2026, Palais des Sports d'Agde. Participation jusqu'au 21 octobre, tirage au sort le 22 octobre.</p>
+      <p class="ndt-hero-liens"><a class="ndt-btn ndt-btn-plein" href="#participer">Comment participer</a><a class="ndt-btn ndt-btn-clair" href="#reglement" id="ndtLienReglement">Lire le règlement</a></p>
     </div>
   </section>
 
@@ -247,6 +248,11 @@
     b.addEventListener('click', function () { ev('concours_participer', { platform: b.getAttribute('data-platform') }); });
   });
   var r = document.getElementById('reglement');
+  /* #reglement (lien en bio, bouton du haut) : ouvre le règlement déplié */
+  function allerReglement() { var y = r.getBoundingClientRect().top + window.scrollY - 90; window.scrollTo(0, Math.max(0, y)); }
+  function ouvrirReglement() { if (r && location.hash === '#reglement') { r.open = true; allerReglement(); setTimeout(allerReglement, 400); } }
+  window.addEventListener('hashchange', ouvrirReglement);
+  if (document.readyState === 'complete') ouvrirReglement(); else window.addEventListener('load', ouvrirReglement);
   if (r) r.addEventListener('toggle', function () { if (r.open) ev('concours_reglement'); });
   var i = document.getElementById('ndtInscription');
   if (i) i.addEventListener('click', function () { ev('concours_inscription_ats'); });

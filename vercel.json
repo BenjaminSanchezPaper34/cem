@@ -4,35 +4,82 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "^cem-expertcomptable\\.fr$" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "^cem-expertcomptable\\.fr$"
+        }
+      ],
       "destination": "https://www.cem-expertcomptable.fr/$1",
       "permanent": true
     },
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/home", "destination": "/", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reglement",
+      "destination": "/nuit-du-trail-2026#reglement",
+      "permanent": false
+    },
+    {
+      "source": "/concours",
+      "destination": "/nuit-du-trail-2026",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/(.*)\\.(webp|jpg|jpeg|png|svg|ico|woff2?|ttf|otf|mp4|webm)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(css|js)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://elfsightcdn.com https://*.elfsight.com https://*.elf.site https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://elfsightcdn.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https:; frame-src https: data:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self';" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://elfsightcdn.com https://*.elfsight.com https://*.elf.site https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://elfsightcdn.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' https:; frame-src https: data:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self';"
+        }
       ]
     }
   ]

@@ -457,3 +457,9 @@ html.off-chatbot .cem-chatbot, html.off-chatbot .cem-chat-fab { display: none !i
 .cem-pop-cta { display: flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; background: var(--cem-blue); color: #fff; font-weight: 600; }
 .cem-pop-cta:hover { background: var(--cem-navy); color: #fff; }
 .cem-pop-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(11,29,58,.75); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.ndt-hero-liens { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.ndt-hero-liens .ndt-btn { margin: 0; }
+.ndt-btn-clair { border-color: #fff; color: #fff; }
+.ndt-btn-clair:hover { background: #fff; color: var(--cem-navy); }
+.ndt-reglement { scroll-margin-top: 96px; }
+@media (max-width: 860px) { .ndt-hero-liens .ndt-btn { width: 100%; } }
